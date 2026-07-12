@@ -185,7 +185,7 @@
   .login-card.tilting{transition:transform .16s ease-out;}
 
   /* ---------- IFRS SOPL formal statement ---------- */
-  .ifrs-head{text-align:center;margin-bottom:24px;padding-bottom:18px;border-bottom:3px double var(--rule-strong);}
+  .ifrs-head{text-align:left;margin-bottom:24px;padding-bottom:18px;border-bottom:3px double var(--rule-strong);}
   .ifrs-co{font-family:'Poppins',sans-serif;font-weight:800;font-size:15px;letter-spacing:.18em;color:var(--gold);}
   .ifrs-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;letter-spacing:.06em;margin-top:6px;color:var(--ink);}
   .ifrs-sub{font-size:13px;color:var(--ink-soft);margin-top:6px;font-weight:500;}
@@ -206,6 +206,35 @@
   .ifrs-notes-title{font-family:'Poppins',sans-serif;font-weight:700;font-size:13px;color:var(--ink);margin-bottom:8px;}
   .ifrs-notes ol{padding-left:20px;margin:0;}
   .ifrs-notes li{margin-bottom:7px;}
+
+  /* ---------- IFRS drill-down levels ---------- */
+  .ifrs-caret{display:inline-block;width:18px;color:var(--gold);font-size:10px;transition:transform .2s;}
+  tr.ifrs-l1 td.ifrs-label{font-weight:600;}
+  tr.ifrs-l1 td.ifrs-label:hover .ifrs-caret{transform:scale(1.3);}
+  tr.ifrs-l2 td.ifrs-label{padding-left:34px;font-weight:500;font-size:12.5px;color:var(--ink-soft);}
+  tr.ifrs-l2 td{background:#FAFCF5;}
+  tr.ifrs-l2 .ifrs-val{font-size:12px;color:var(--ink-soft);}
+  tr.ifrs-l3 td.ifrs-label{padding-left:58px;font-size:11.5px;color:var(--ink-soft);}
+  tr.ifrs-l3 td{background:#FDFEFA;border-bottom:1px dashed #EDF3E9;}
+  tr.ifrs-l3 .ifrs-val{font-size:11px;color:var(--ink-soft);}
+  .ifrs-code{display:inline-block;font-family:'IBM Plex Mono',monospace;font-size:10px;background:var(--gold-tint);color:var(--ink);border-radius:3px;padding:1px 6px;margin-right:8px;}
+  tr.ifrs-kpiline td{background:linear-gradient(90deg, var(--gold-tint), #F8FCEB) !important;}
+  tr.ifrs-kpiline td.ifrs-label{color:var(--ink);letter-spacing:.02em;}
+  .bl-expand-btn{display:block;margin-top:4px;margin-left:auto;background:var(--navy-deep);color:var(--gold-bright);border:1px solid rgba(170,255,1,.4);border-radius:3px;font-size:9.5px;font-weight:700;letter-spacing:.04em;padding:3px 8px;cursor:pointer;transition:all .2s;}
+  .bl-expand-btn:hover{background:var(--gold-bright);color:var(--navy-deep);}
+
+  /* ---------- Period mode toggle (Months / Quarters) ---------- */
+  .period-mode-toggle{display:flex;gap:4px;margin-bottom:8px;background:var(--paper);border-radius:4px;padding:3px;}
+  .pm-btn{flex:1;border:none;background:transparent;font-family:'Poppins',sans-serif;font-weight:600;font-size:11px;padding:6px 8px;border-radius:3px;color:var(--ink-soft);cursor:pointer;transition:all .2s;}
+  .pm-btn.active{background:var(--navy-deep);color:var(--gold-bright);box-shadow:0 2px 8px rgba(11,13,10,.25);}
+  .pm-btn:hover:not(.active){background:var(--gold-tint);color:var(--ink);}
+
+  /* ---------- WhatsApp request access ---------- */
+  .wa-request{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:14px;padding:10px;
+    border:1px solid rgba(170,255,1,.3);border-radius:4px;color:#B9CCA3;font-size:12px;font-weight:600;
+    text-decoration:none;font-family:'Poppins',sans-serif;transition:all .25s;animation:fadeIn 1s 6.3s both;}
+  .wa-request:hover{background:rgba(37,211,102,.12);border-color:#25D366;color:#25D366;transform:translateY(-2px);}
+  .wa-request svg{flex:0 0 16px;}
 
   /* ==================== RESPONSIVE: TABLET & MOBILE ==================== */
   @media (max-width: 1024px){
@@ -263,10 +292,27 @@
     .ifrs-table td{padding:7px 8px;}
   }
   @media (max-width: 420px){
-    .cards{grid-template-columns:1fr;}
+    .wrap{padding:12px 8px 56px;}
+    .cards{grid-template-columns:1fr;gap:10px;}
     .card{padding:14px;}
-    header h1{font-size:18px;}
+    header h1{font-size:17px;}
+    header .sub{font-size:10px;word-break:break-word;}
+    .filters > div{flex:1 1 100%;}
+    .section-box{padding:12px 10px;}
+    .kpi-ticker .ticker-item{margin:0 10px;font-size:10px;}
+    .ana-hero-grid{grid-template-columns:1fr 1fr;gap:8px;}
+    .ana-kpi{padding:10px 12px;}
+    .ana-kpi .k-value{font-size:20px;}
+    .login-card{padding:24px 16px 20px;}
+    .statement-controls{gap:6px;}
+    .export-btn{padding:6px 10px;font-size:11px;}
+    .bl-expand-btn{font-size:8.5px;padding:2px 5px;}
+    .ifrs-table td{padding:6px 6px;}
+    tr.ifrs-l2 td.ifrs-label{padding-left:22px;}
+    tr.ifrs-l3 td.ifrs-label{padding-left:38px;}
   }
+  html, body{overflow-x:hidden;max-width:100vw;}
+  .table-scroll, .statement-scroll{-webkit-overflow-scrolling:touch;}
   /* touch devices: disable pointer-dependent physics */
   @media (hover: none){
     .cards, .table-scroll, .statement-scroll, .section-box canvas{transform:none !important;}
@@ -619,7 +665,11 @@
     </div>
     <button class="login-btn" id="loginBtn" onclick="doLogin()">Sign in</button>
     <div class="login-error" id="loginError"></div>
-    <div class="login-foot">AUTHORISED ACCESS ONLY · SESSIONS EXPIRE AFTER 6 HOURS<br><span style="color:var(--gold-bright);opacity:.75;">BUILD 2026-07-11-H · NANA FINANCIALS 2026</span></div>
+    <a class="wa-request" href="https://wa.me/201092482889?text=Please%20I%20need%20access%20to%20the%20Nana%202026%20Financial%20Dashboard" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Request access on WhatsApp
+    </a>
+    <div class="login-foot">AUTHORISED ACCESS ONLY · SESSIONS EXPIRE AFTER 6 HOURS<br><span style="color:var(--gold-bright);opacity:.75;">BUILD 2026-07-12-J · NANA FINANCIALS 2026</span></div>
   </div>
 </div>
 
@@ -651,10 +701,14 @@
       <select id="lineFilter"><option value="ALL">All lines</option></select>
     </div>
     <div class="month-picker-wrap">
-      <label>Month(s)</label>
-      <button type="button" class="month-picker-btn" id="monthPickerBtn" onclick="toggleMonthPicker()">Select months ▾</button>
+      <label>Periods</label>
+      <button type="button" class="month-picker-btn" id="monthPickerBtn" onclick="toggleMonthPicker()">Select periods ▾</button>
       <div class="month-picker-panel" id="monthPickerPanel" style="display:none;">
-        <label class="month-cb-row"><input type="checkbox" id="monthAllCb" onchange="toggleAllMonths()"> <strong>All months</strong></label>
+        <div class="period-mode-toggle">
+          <button type="button" id="pmMonths" class="pm-btn active" onclick="setPeriodMode('months')">Months</button>
+          <button type="button" id="pmQuarters" class="pm-btn" onclick="setPeriodMode('quarters')">Quarters</button>
+        </div>
+        <label class="month-cb-row"><input type="checkbox" id="monthAllCb" onchange="toggleAllMonths()"> <strong id="allPeriodsLabel">All months</strong></label>
         <div id="monthCheckboxes"></div>
       </div>
     </div>
@@ -1103,12 +1157,12 @@ function populateFilters(){
     DATA.businessLines.map(function(l){ return '<option value="'+l.code+'">'+l.name+'</option>'; }).join('');
   lineSel.value = [...lineSel.options].some(o=>o.value===cur) ? cur : 'ALL';
 
-  const monthBox = document.getElementById('monthCheckboxes');
-  monthBox.innerHTML = DATA.months.map(function(m){
-    return '<label><input type="checkbox" class="month-cb" value="'+m+'" onchange="onMonthCbChange()"> '+m+'</label>';
-  }).join('');
+  renderPeriodList();
   if (selectedMonths.size === 0 || ![...selectedMonths].every(function(m){ return DATA.months.includes(m); })){
     selectedMonths = new Set([DATA.months[DATA.months.length-1]]);
+  }
+  if (selectedQuarters.size === 0 || ![...selectedQuarters].every(function(q){ return quartersFromData().includes(q); })){
+    selectedQuarters = new Set([quarterOf(DATA.months[DATA.months.length-1])]);
   }
   syncMonthCheckboxes();
 
@@ -1128,41 +1182,101 @@ function pctFmt(n){
 }
 
 let selectedMonths = new Set();
+let selectedQuarters = new Set();
+let periodMode = 'months'; // 'months' | 'quarters'
+
+// "Jan 2026" -> "Q1 2026" (Q1: Jan-Mar, Q2: Apr-Jun, Q3: Jul-Sep, Q4: Oct-Dec)
+const MONTH_Q = {Jan:1,Feb:1,Mar:1,Apr:2,May:2,Jun:2,Jul:3,Aug:3,Sep:3,Oct:4,Nov:4,Dec:4};
+function quarterOf(m){
+  const parts = String(m).trim().split(/\s+/);
+  const q = MONTH_Q[parts[0]];
+  return q ? ('Q' + q + ' ' + (parts[1]||'')) : m;
+}
+function quartersFromData(){
+  const seen = [];
+  (DATA ? DATA.months : []).forEach(function(m){
+    const q = quarterOf(m);
+    if (seen.indexOf(q) === -1) seen.push(q);
+  });
+  return seen;
+}
+function monthsOfQuarter(q){
+  return (DATA ? DATA.months : []).filter(function(m){ return quarterOf(m) === q; });
+}
+
+function setPeriodMode(mode){
+  periodMode = mode;
+  document.getElementById('pmMonths').classList.toggle('active', mode === 'months');
+  document.getElementById('pmQuarters').classList.toggle('active', mode === 'quarters');
+  document.getElementById('allPeriodsLabel').textContent = mode === 'months' ? 'All months' : 'All quarters';
+  renderPeriodList();
+  syncMonthCheckboxes();
+}
+
+function renderPeriodList(){
+  const box = document.getElementById('monthCheckboxes');
+  if (!box || !DATA) return;
+  const list = periodMode === 'months' ? DATA.months : quartersFromData();
+  box.innerHTML = list.map(function(p){
+    return '<label><input type="checkbox" class="month-cb" value="'+p+'" onchange="onMonthCbChange()"> '+p+'</label>';
+  }).join('');
+}
 
 function syncMonthCheckboxes(){
+  const sel = periodMode === 'months' ? selectedMonths : selectedQuarters;
   document.querySelectorAll('.month-cb').forEach(function(cb){
-    cb.checked = selectedMonths.has(cb.value);
+    cb.checked = sel.has(cb.value);
   });
   const allCb = document.getElementById('monthAllCb');
-  if (allCb) allCb.checked = DATA && selectedMonths.size === DATA.months.length;
+  const total = periodMode === 'months' ? (DATA ? DATA.months.length : 0) : quartersFromData().length;
+  if (allCb) allCb.checked = DATA && sel.size === total && total > 0;
   updateMonthButtonLabel();
 }
 
 function updateMonthButtonLabel(){
   const btn = document.getElementById('monthPickerBtn');
-  const n = selectedMonths.size;
-  const total = DATA ? DATA.months.length : 0;
-  if (n === 0) btn.textContent = 'Select months ▾';
-  else if (n === total) btn.textContent = 'All months (' + n + ') ▾';
-  else if (n === 1) btn.textContent = [...selectedMonths][0] + ' ▾';
-  else btn.textContent = n + ' months selected ▾';
+  const sel = periodMode === 'months' ? selectedMonths : selectedQuarters;
+  const unit = periodMode === 'months' ? 'months' : 'quarters';
+  const total = periodMode === 'months' ? (DATA ? DATA.months.length : 0) : quartersFromData().length;
+  const n = sel.size;
+  if (n === 0) btn.textContent = 'Select periods ▾';
+  else if (n === total) btn.textContent = 'All ' + unit + ' (' + n + ') ▾';
+  else if (n === 1) btn.textContent = [...sel][0] + ' ▾';
+  else btn.textContent = n + ' ' + unit + ' selected ▾';
 }
 
 function onMonthCbChange(){
-  selectedMonths = new Set(Array.from(document.querySelectorAll('.month-cb:checked')).map(function(cb){ return cb.value; }));
+  const picked = new Set(Array.from(document.querySelectorAll('.month-cb:checked')).map(function(cb){ return cb.value; }));
+  if (periodMode === 'months') selectedMonths = picked; else selectedQuarters = picked;
   syncMonthCheckboxes();
 }
 
 function toggleAllMonths(){
   const allCb = document.getElementById('monthAllCb');
-  selectedMonths = allCb.checked ? new Set(DATA.months) : new Set();
+  if (periodMode === 'months'){
+    selectedMonths = allCb.checked ? new Set(DATA.months) : new Set();
+  } else {
+    selectedQuarters = allCb.checked ? new Set(quartersFromData()) : new Set();
+  }
   syncMonthCheckboxes();
+}
+
+// Periods as objects: months mode -> one per month; quarters mode -> aggregated quarters
+function selectedPeriodsSorted(){
+  if (!DATA) return [];
+  if (periodMode === 'months'){
+    return DATA.months.filter(function(m){ return selectedMonths.has(m); })
+      .map(function(m){ return {label:m, months:[m]}; });
+  }
+  return quartersFromData().filter(function(q){ return selectedQuarters.has(q); })
+    .map(function(q){ return {label:q, months:monthsOfQuarter(q)}; });
 }
 
 function applyFilters(){
   const btn = document.getElementById('applyBtn');
   if (btn){ btn.textContent = 'Applied ✓'; setTimeout(function(){ btn.textContent = 'Apply filters'; }, 900); }
   render();
+  try{ buildTicker(); }catch(err){}
   if (document.getElementById('tab-comparison').style.display !== 'none') renderComparison();
   if (document.getElementById('tab-analytics').style.display !== 'none') renderAnalytics();
   if (document.getElementById('tab-ifrs').style.display !== 'none') renderIFRS();
@@ -1181,7 +1295,10 @@ document.addEventListener('click', function(e){
 
 function selectedMonthsSorted(){
   if (!DATA) return [];
-  return DATA.months.filter(function(m){ return selectedMonths.has(m); });
+  if (periodMode === 'months'){
+    return DATA.months.filter(function(m){ return selectedMonths.has(m); });
+  }
+  return DATA.months.filter(function(m){ return selectedQuarters.has(quarterOf(m)); });
 }
 
 function aggregateSummary(line, months){
@@ -1532,8 +1649,50 @@ function extraAccountsByCategory(){
   return byCat;
 }
 
+// Split extras: those whose name matches a template sub-group go INSIDE that
+// group (byClose: groupClosingRow -> accounts); the rest stay at section level.
+function normAcctName_(n){ return String(n||'').split('|')[0].trim().toLowerCase(); }
+function extraPlacement(){
+  const subheaderByName = {};
+  TEMPLATE_ROWS.forEach(function(e){
+    if (e.type === 'subheader' && e.closesAt) subheaderByName[normAcctName_(e.label)] = e.closesAt;
+  });
+  const byClose = {}; // group closing row -> [accounts]
+  const bySection = {}; // category -> [accounts]
+  const extras = extraAccountsByCategory();
+  Object.keys(extras).forEach(function(cat){
+    extras[cat].forEach(function(acc){
+      const target = subheaderByName[normAcctName_(acc.name)];
+      if (target){
+        if (!byClose[target]) byClose[target] = [];
+        byClose[target].push(acc);
+      } else {
+        if (!bySection[cat]) bySection[cat] = [];
+        bySection[cat].push(acc);
+      }
+    });
+  });
+  return { byClose: byClose, bySection: bySection };
+}
+
 function computeStatementValues(line, month){
   const values = {};
+  const placement = extraPlacement();
+  // pre-compute the amount to inject into each closing row
+  const closeAdd = {};
+  Object.keys(placement.byClose).forEach(function(r){
+    let s = 0;
+    placement.byClose[r].forEach(function(acc){ s += leafAmountForCode(acc.code, line, month); });
+    closeAdd[r] = (closeAdd[r] || 0) + s;
+  });
+  Object.keys(placement.bySection).forEach(function(cat){
+    const closeRow = CATEGORY_SECTION_CLOSE[cat];
+    if (!closeRow) return;
+    let s = 0;
+    placement.bySection[cat].forEach(function(acc){ s += leafAmountForCode(acc.code, line, month); });
+    closeAdd[closeRow] = (closeAdd[closeRow] || 0) + s;
+  });
+
   TEMPLATE_ROWS.forEach(function(entry){
     if (entry.type === 'leaf'){
       values[entry.row] = leafAmountForCode(entry.code, line, month);
@@ -1542,31 +1701,12 @@ function computeStatementValues(line, month){
     } else if (entry.type === 'closing'){
       let sum = 0;
       entry.children.forEach(function(c){ sum += (values[c] || 0); });
+      if (closeAdd[entry.row]) sum += closeAdd[entry.row];
       values[entry.row] = sum;
     } else if (entry.type === 'kpi'){
       values[entry.row] = KPI_FORMULAS[entry.row] ? KPI_FORMULAS[entry.row](values) : 0;
     }
   });
-
-  // Fold any extra (newly-mapped, non-template) accounts into their category's
-  // section total, then recompute KPIs so EBITDA/EBIT/Net Profit stay correct.
-  const extras = extraAccountsByCategory();
-  let addedAny = false;
-  Object.keys(extras).forEach(function(cat){
-    const closeRow = CATEGORY_SECTION_CLOSE[cat];
-    if (!closeRow) return;
-    let extraSum = 0;
-    extras[cat].forEach(function(acc){ extraSum += leafAmountForCode(acc.code, line, month); });
-    if (Math.abs(extraSum) > 0.000001){
-      values[closeRow] = (values[closeRow] || 0) + extraSum;
-      addedAny = true;
-    }
-  });
-  if (addedAny){
-    Object.keys(KPI_FORMULAS).map(Number).sort(function(a,b){ return a-b; }).forEach(function(r){
-      values[r] = KPI_FORMULAS[r](values);
-    });
-  }
 
   return values;
 }
@@ -1637,6 +1777,7 @@ function renderStatement(){
   );
   const groupVisible = {};      // headerRow -> bool
   const closerVisible = {};     // closingRow -> bool (for subgroup closers)
+  const placementVis = extraPlacement();
   TEMPLATE_ROWS.forEach(function(e){
     if ((e.type === 'section' || e.type === 'subheader') && e.closesAt){
       let anyNonZero = false;
@@ -1645,6 +1786,10 @@ function renderStatement(){
           if (displayedCols.some(function(ck){ return Math.abs(colValues[ck][inner.row]||0) >= 0.005; })) anyNonZero = true;
         }
       });
+      // extras attached inside this group count toward its visibility
+      if (!anyNonZero && placementVis.byClose[e.closesAt]){
+        if (displayedCols.some(function(ck){ return Math.abs(colValues[ck][e.closesAt]||0) >= 0.005; })) anyNonZero = true;
+      }
       groupVisible[e.row] = anyNonZero || e.type === 'section';
       closerVisible[e.closesAt] = anyNonZero || e.type === 'section';
     }
@@ -1707,13 +1852,20 @@ function renderStatement(){
       return '<td class="stmt-value '+(v<0?'neg ':'')+(extraClass||'')+'">'+disp+'</td>';
     }
 
-    // Before a MAJOR section total, emit any newly-mapped (non-template)
-    // accounts that belong to this category as their own labelled rows.
+    // Emit newly-mapped (non-template) accounts as their own rows:
+    // - name-matched extras appear INSIDE their matching sub-group (before its subtotal)
+    // - the rest appear before their category's MAJOR section total
     let extraRowsHtml = '';
-    if (entry.type === 'closing' && sectionClosingRows.has(entry.row) && SECTION_CLOSE_TO_CATEGORY[entry.row]){
-      const cat = SECTION_CLOSE_TO_CATEGORY[entry.row];
-      const extras = extraAccountsByCategory()[cat] || [];
-      extras.forEach(function(acc){
+    let extrasHere = [];
+    if (entry.type === 'closing'){
+      const placement = extraPlacement();
+      if (placement.byClose[entry.row]) extrasHere = extrasHere.concat(placement.byClose[entry.row]);
+      if (sectionClosingRows.has(entry.row) && SECTION_CLOSE_TO_CATEGORY[entry.row]){
+        extrasHere = extrasHere.concat(placement.bySection[SECTION_CLOSE_TO_CATEGORY[entry.row]] || []);
+      }
+    }
+    if (extrasHere.length){
+      extrasHere.forEach(function(acc){
         const anyNonZero = displayedCols.some(function(ck){
           return Math.abs(leafAmountForCode(acc.code, ck === 'TOTAL' ? 'ALL' : ck, months)) >= 0.005;
         });
@@ -1797,12 +1949,15 @@ function renderComparison(){
   if (!DATA) return;
   const scope = document.getElementById('lineFilter').value || 'ALL';
   const varianceMode = document.getElementById('compVarianceMode').value || 'prior';
-  const months = selectedMonthsSorted();
-  if (!months.length) return;
+  const periods = selectedPeriodsSorted();
+  if (!periods.length) return;
+  const months = periods.map(function(p){ return p.label; });
+  const monthsOf = {};
+  periods.forEach(function(p){ monthsOf[p.label] = p.months; });
 
-  // per-month value maps for the chosen scope
-  const monthValues = {}; // month -> {row:value}
-  months.forEach(function(m){ monthValues[m] = computeStatementValues(scope, [m]); });
+  // per-period value maps for the chosen scope
+  const monthValues = {}; // period label -> {row:value}
+  months.forEach(function(m){ monthValues[m] = computeStatementValues(scope, monthsOf[m]); });
 
   const displayCols = months.slice();
   const hidden = computeHiddenRowSet();
@@ -1812,6 +1967,7 @@ function renderComparison(){
   );
   const groupVisible = {};
   const closerVisible = {};
+  const placementVis = extraPlacement();
   TEMPLATE_ROWS.forEach(function(e){
     if ((e.type === 'section' || e.type === 'subheader') && e.closesAt){
       let anyNonZero = false;
@@ -1820,13 +1976,16 @@ function renderComparison(){
           if (months.some(function(m){ return Math.abs(monthValues[m][inner.row]||0) >= 0.005; })) anyNonZero = true;
         }
       });
+      if (!anyNonZero && placementVis.byClose[e.closesAt]){
+        if (months.some(function(m){ return Math.abs(monthValues[m][e.closesAt]||0) >= 0.005; })) anyNonZero = true;
+      }
       groupVisible[e.row] = anyNonZero || e.type === 'section';
       closerVisible[e.closesAt] = anyNonZero || e.type === 'section';
     }
   });
 
   const showVar = varianceMode !== 'none';
-  const varLabel = varianceMode === 'first' ? 'Δ vs ' + months[0] : 'Δ MoM';
+  const varLabel = varianceMode === 'first' ? 'Δ vs ' + months[0] : 'Δ vs prior';
 
   // header
   let headCols = '<th class="col-label">Financial Row</th>' +
@@ -1873,17 +2032,23 @@ function renderComparison(){
     else if (entry.type === 'closing') rowClass = sectionClosingRows.has(entry.row) ? 'stmt-closing stmt-closing-major' : 'stmt-closing';
     else rowClass = 'stmt-leaf';
 
-    // Extra newly-mapped accounts for this category, emitted before the section total
+    // Extra newly-mapped accounts: group-matched inside their sub-group, rest before section total
     let extraRowsHtml = '';
-    if (entry.type === 'closing' && sectionClosingRows.has(entry.row) && SECTION_CLOSE_TO_CATEGORY[entry.row]){
-      const cat = SECTION_CLOSE_TO_CATEGORY[entry.row];
-      const extras = extraAccountsByCategory()[cat] || [];
-      extras.forEach(function(acc){
-        const anyNonZero = months.some(function(m){ return Math.abs(leafAmountForCode(acc.code, scope, [m])) >= 0.005; });
+    let extrasHere = [];
+    if (entry.type === 'closing'){
+      const placement = extraPlacement();
+      if (placement.byClose[entry.row]) extrasHere = extrasHere.concat(placement.byClose[entry.row]);
+      if (sectionClosingRows.has(entry.row) && SECTION_CLOSE_TO_CATEGORY[entry.row]){
+        extrasHere = extrasHere.concat(placement.bySection[SECTION_CLOSE_TO_CATEGORY[entry.row]] || []);
+      }
+    }
+    if (extrasHere.length){
+      extrasHere.forEach(function(acc){
+        const anyNonZero = months.some(function(m){ return Math.abs(leafAmountForCode(acc.code, scope, monthsOf[m])) >= 0.005; });
         if (!anyNonZero) return;
         let er = '<tr class="stmt-leaf"><td class="stmt-label">'+(acc.name || acc.code)+' <span style="color:var(--gold);font-size:10px;">(added)</span></td>';
         er += months.map(function(m, i){
-          const v = leafAmountForCode(acc.code, scope, [m]);
+          const v = leafAmountForCode(acc.code, scope, monthsOf[m]);
           const totalCls = (i === months.length-1) ? 'col-total-cell' : '';
           return '<td class="stmt-value '+(v<0?'neg ':'')+totalCls+'">'+fmt(v)+'</td>';
         }).join('');
@@ -1926,9 +2091,12 @@ function renderComparison(){
 function exportComparisonCsv(){
   if (!DATA) return;
   const scope = document.getElementById('lineFilter').value || 'ALL';
-  const months = selectedMonthsSorted();
+  const periods = selectedPeriodsSorted();
+  const months = periods.map(function(p){ return p.label; });
+  const monthsOfX = {};
+  periods.forEach(function(p){ monthsOfX[p.label] = p.months; });
   const monthValues = {};
-  months.forEach(function(m){ monthValues[m] = computeStatementValues(scope, [m]); });
+  months.forEach(function(m){ monthValues[m] = computeStatementValues(scope, monthsOfX[m]); });
 
   const rows = [['Financial Row','D365'].concat(months)];
   TEMPLATE_ROWS.forEach(function(entry){
@@ -1998,6 +2166,7 @@ function renderIFRS(){
   if (!DATA) return;
   const scope = document.getElementById('lineFilter').value || 'ALL';
   const months = selectedMonthsSorted();
+  const ifrsPeriods = selectedPeriodsSorted();
   if (!months.length) return;
 
   const scopeName = scope === 'ALL' ? 'Consolidated (all business lines)' :
@@ -2012,13 +2181,13 @@ function renderIFRS(){
   let cols = [];
   if (ifrsShowBL){
     DATA.businessLines.forEach(function(l){ cols.push({t:'bl', code:l.code, label:l.name}); });
-  } else if (months.length > 1){
-    months.forEach(function(m){ cols.push({t:'m', m:m, label:m}); });
+  } else if (ifrsPeriods.length > 1){
+    ifrsPeriods.forEach(function(p){ cols.push({t:'m', months:p.months, label:p.label}); });
   }
-  cols.push({t:'total', label: (months.length===1 && !ifrsShowBL) ? months[0] : 'Total period'});
+  cols.push({t:'total', label: (ifrsPeriods.length===1 && !ifrsShowBL) ? ifrsPeriods[0].label : 'Total period'});
 
   function scopeFor(col){ return col.t === 'bl' ? col.code : scope; }
-  function monthsFor(col){ return col.t === 'm' ? [col.m] : months; }
+  function monthsFor(col){ return col.t === 'm' ? col.months : months; }
 
   function catVal(cat, col){
     const c = aggregateSummary(scopeFor(col), monthsFor(col));
@@ -2524,15 +2693,20 @@ function playTabWipe(){
 // ---------- Live KPI ticker ----------
 function buildTicker(){
   if (!DATA || !DATA.months.length) return;
-  const lastMonth = DATA.months[DATA.months.length - 1];
+  const scope = document.getElementById('lineFilter').value || 'ALL';
+  const months = selectedMonthsSorted();
+  if (!months.length) return;
+  const perLabel = months.length === 1 ? months[0]
+    : (periodMode === 'quarters' ? [...selectedQuarters].join(' + ') : months[0] + ' – ' + months[months.length-1]);
   const items = [];
-  const t = kpis('ALL', [lastMonth]);
-  items.push({label:'Revenue ('+lastMonth+')', v:t.revenue});
+  const t = kpis(scope, months);
+  items.push({label:'Revenue ('+perLabel+')', v:t.revenue});
   items.push({label:'Gross Margin', v:t.revenue?(t.profitMargin/t.revenue*100):0, pct:true});
   items.push({label:'EBITDA', v:t.ebitda});
   items.push({label:'Net P/L', v:t.netProfit});
   DATA.businessLines.forEach(function(l){
-    const k = kpis(l.code, [lastMonth]);
+    if (scope !== 'ALL' && l.code !== scope) return;
+    const k = kpis(l.code, months);
     if (Math.abs(k.revenue) < 0.005 && Math.abs(k.netProfit) < 0.005) return;
     items.push({label:l.name + ' Net', v:k.netProfit});
   });
