@@ -200,8 +200,11 @@
     footer.colophon{ max-width:100% !important; padding:20px 0 0 !important; }
     .part-divider{ break-before:page; page-break-before:always; margin-top:0 !important; padding-top:0; border-top:none; }
     section.sop:first-of-type .part-divider{ break-before:auto; page-break-before:avoid; }
-    .sop-head{ break-after:avoid; page-break-after:avoid; }
-    h2,h3.sub{ break-after:avoid; page-break-after:avoid; }
+    .sop-head{ break-after:avoid-page; page-break-after:avoid; break-inside:avoid-page; page-break-inside:avoid; }
+    h2,h3.sub{ break-after:avoid-page; page-break-after:avoid; }
+    .sop-head + *{ break-before:avoid-page; page-break-before:avoid; }
+    h3.sub + *{ break-before:avoid-page; page-break-before:avoid; }
+    .keep{ break-inside:avoid; page-break-inside:avoid; }
     .je, .flow, .callout, .doc-control{ break-inside:avoid; page-break-inside:avoid; }
     .scroll{ overflow-x:visible !important; box-shadow:none !important; }
     table{ font-size:11px; }
@@ -294,11 +297,13 @@
           <div class="pnum">I</div>
           <div class="ptext"><span class="eyebrow peyebrow">Part I</span><h2>Foundations</h2><p class="pdesc">How the business makes money, and the account structure every downstream SOP posts against.</p></div>
         </div>
+        <div class="keep">
         <div class="sop-head">
           <div class="sop-tag">00</div>
           <div class="sop-head-text"><span class="eyebrow">Foundations</span><h2>The LPG Value Chain, In One Loop</h2></div>
         </div>
         <p class="lede">Best Gas does not sell gas in a straight line from plant to customer — it sells gas in a <strong>loop</strong>, and it runs on more than one financial cycle at once: money goes out to gas and equipment suppliers, gas and steel move through plants, vans and customer homes, money comes back in through counters, drivers and the Souq Gas app, and people, tax and lenders all take a share along the way. This manual is organised the way Finance actually experiences the business — cycle by cycle, not department by department.</p>
+        </div>
 
         <div class="flow">
           <div class="flow-step"><div class="fn">01</div><div class="ft">Buy</div><div class="fd">Bulk gas, cylinders, spares and capex procured (Part II).</div></div>
@@ -344,11 +349,13 @@
       </section>
 
       <section class="sop" id="coa">
+        <div class="keep">
         <div class="sop-head">
           <div class="sop-tag">01</div>
           <div class="sop-head-text"><span class="eyebrow">Foundations</span><h2>Group Chart of Accounts</h2></div>
         </div>
         <p class="lede">One numbering block per financial cycle. Detailed sub‑accounts for cylinders and gas live in Part III; this table is the map of where everything else lives.</p>
+        </div>
         <div class="scroll"><table class="wide">
           <thead><tr><th>Block</th><th>Category</th><th>Governed by</th></tr></thead>
           <tbody>
@@ -559,11 +566,13 @@
           <span class="lbl">Recognition model — <span class="pill std">IFRS 15</span></span>
           <p>Every revenue SOP in this Part applies the same five‑step model: (1) identify the contract — a POS ticket, an app order, or a signed B2B agreement; (2) identify the performance obligation(s) — gas delivered, and, on a first‑time exchange, none for the deposit itself, since it is not consideration for a supply; (3) determine the transaction price — gas value, deposit, delivery fee where charged; (4) allocate the price across distinct obligations; (5) recognise revenue when control transfers — at weigh‑out for a counter refill, at courier hand‑off for a B2B delivery, at <strong>Delivered</strong> status for the Souq Gas app (SOP‑11), never at order placement or cash receipt.</p>
         </div>
+        <div class="keep">
         <div class="sop-head">
           <div class="sop-tag">SOP‑09</div>
           <div class="sop-head-text"><span class="eyebrow">Order‑to‑Cash</span><h2>Refill Sale — Customer's Own Cylinder</h2></div>
         </div>
         <p class="lede">In a refill, the customer already owns or holds the cylinder on deposit. Best Gas sells <strong>gas only</strong> — no deposit moves. Highest margin, and the most exposed to under‑fill loss if weigh‑in is skipped.</p>
+        </div>
         <div class="prose"><ol>
           <li>Attendant scans the cylinder QR — a serial not in the Best Gas register is refused per safety policy.</li>
           <li>Cylinder weighed empty (tare) and full (gross); the customer is billed for kg actually filled, not a flat "one refill" price.</li>
@@ -630,11 +639,13 @@
       </section>
 
       <section class="sop" id="sop12">
+        <div class="keep">
         <div class="sop-head">
           <div class="sop-tag">SOP‑12</div>
           <div class="sop-head-text"><span class="eyebrow">Order‑to‑Cash</span><h2>B2B Commercial &amp; Industrial Contracts</h2></div>
         </div>
         <p class="lede">Restaurants, factories, hotels and catering accounts buy on contract and on credit, not walk‑in cash — a materially different risk profile from retail refill/exchange.</p>
+        </div>
         <div class="prose"><ol>
           <li>New commercial account signed on a supply contract fixing price basis (index‑linked to bulk cost or fixed for a term), delivery schedule and payment terms.</li>
           <li>Credit limit set per SOP‑13 before the first contract delivery, independent of the sales relationship owner.</li>
@@ -734,8 +745,10 @@
             <tr><td>Unexplained after investigation</td><td>—</td><td><span class="pill crit">Written off</span> to <span class="num">5004</span> with Finance Manager approval</td></tr>
           </tbody>
         </table></div>
+        <div class="keep">
         <h3 class="sub"><span class="n">16.3</span>Payment gateway (PSP) settlement</h3>
         <p>Card and app‑wallet payments settle from the acquirer/PSP one to two business days after the transaction, net of interchange fees. Treasury reconciles three figures daily: the <strong>POS/app batch total</strong>, the <strong>PSP settlement report</strong>, and the <strong>bank credit received</strong> — timing differences are tracked in a settlement‑in‑transit account and cleared as bank credits land, not assumed away.</p>
+        </div>
       </section>
 
       <section class="sop" id="sop17">
@@ -894,11 +907,13 @@
       </section>
 
       <section class="sop" id="sop27">
+        <div class="keep">
         <div class="sop-head">
           <div class="sop-tag">SOP‑27</div>
           <div class="sop-head-text"><span class="eyebrow">Planning</span><h2>Management &amp; Board Reporting</h2></div>
         </div>
         <p>The monthly management pack — P&amp;L by channel (refill, exchange, B2B, Souq Gas app), balance sheet, cash flow, the KPI scorecard below, and variance commentary on any line moving more than 5% or SAR 100,000 versus budget — is circulated by FP&amp;A ahead of the monthly close meeting (SOP‑28) and rolled up into the quarterly board pack.</p>
+        </div>
       </section>
 
       <section class="sop" id="kpi">
@@ -963,8 +978,10 @@
         <h3 class="sub"><span class="n">29.2</span>Risk assessment</h3>
         <p>Risk is reassessed at defined trigger points already built into this manual, not on a separate schedule: variance thresholds (SOP‑08, SOP‑16), B2B credit limits and ECL banding (SOP‑13), capex business cases (SOP‑18), and the insurance/claims log (SOP‑30). A consolidated risk register is reviewed at each quarterly board pack (SOP‑27).</p>
 
+        <div class="keep">
         <h3 class="sub"><span class="n">29.3</span>Control activities — segregation of duties</h3>
         <p>No single role originates, approves and records the same transaction across any cycle.</p>
+        </div>
         <div class="scroll"><table class="wide raci">
           <thead><tr><th>Activity</th><th class="center">Originates</th><th class="center">Approves</th><th class="center">Records in GL</th></tr></thead>
           <tbody>
@@ -1056,6 +1073,7 @@
         </table></div>
         <p style="font-size:13px;color:var(--ink-faint);">Standards are cited for the process they govern conceptually; always confirm the current locally adopted edition, interval or threshold before relying on a specific figure in this manual.</p>
 
+        <div class="keep">
         <h3 class="sub"><span class="n">A.4</span>Revision history</h3>
         <div class="scroll"><table>
           <thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead>
@@ -1065,6 +1083,7 @@
             <tr><td class="num">3.0</td><td class="num">2026‑08‑07</td><td>Grounded in named external standards (IFRS/SOCPA, COSO 2013, WLPGA, ISO 4706/10464, ZATCA); clarified that Best Gas purchases cylinders as trading inventory and does not manufacture them; recast Part IV revenue recognition under IFRS 15 and Part X controls under the COSO five‑component structure</td></tr>
           </tbody>
         </table></div>
+        </div>
       </section>
 
     </div>
