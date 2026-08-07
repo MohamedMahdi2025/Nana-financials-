@@ -132,6 +132,8 @@
   .pill.warn{background:var(--warn-tint); color:var(--warn);}
   .pill.crit{background:var(--crit-tint); color:var(--crit);}
   .pill.info{background:var(--flame-tint); color:var(--flame-deep);}
+  .pill.std{background:var(--surface-2); color:var(--ink-soft); border:1px solid var(--line); font-family:'JetBrains Mono',monospace;}
+  .stdrow{display:flex; flex-wrap:wrap; gap:6px; margin:10px 0 20px;}
 
   .je{border:1px solid var(--line); border-radius:3px; background:var(--surface); margin:0 0 22px; box-shadow:var(--shadow); overflow:hidden;}
   .je-head{display:flex; justify-content:space-between; align-items:baseline; gap:12px; padding:10px 16px; background:var(--surface-2); border-bottom:1px solid var(--line);}
@@ -214,7 +216,7 @@
 <div class="shell">
   <nav class="side" aria-label="Document sections">
     <div class="brand"><span class="mark" aria-hidden="true"></span><span class="brand-name">BEST GAS</span></div>
-    <div class="brand-sub">Finance SOP Manual · v2.0</div>
+    <div class="brand-sub">Finance SOP Manual · v3.0</div>
     <ul class="navlist">
       <li class="navgroup-label">I · Foundations</li>
       <li><a href="#model"><span class="tag">00</span>Business &amp; loop</a></li>
@@ -268,13 +270,13 @@
       <div class="cover-inner">
         <div class="plate">Controlled Document · Office of the CFO</div>
         <h1>Best Gas<br/><span>Finance</span> SOP Manual</h1>
-        <p class="dek">The complete standard operating procedure set for Best Gas Finance — procurement and payables, cylinder &amp; filling operations, order‑to‑cash across refill, exchange and the <strong>Souq Gas</strong> app, treasury and cash, fixed assets, payroll, Zakat &amp; VAT, planning, and period‑end close.</p>
+        <p class="dek">The complete standard operating procedure set for Best Gas Finance — procurement and payables, cylinder &amp; filling operations, order‑to‑cash across refill, exchange and the <strong>Souq Gas</strong> app, treasury and cash, fixed assets, payroll, Zakat &amp; VAT, planning, and period‑end close. Best Gas buys cylinders as trading inventory and distributes LPG gas; it does not manufacture cylinders — see 00.2. Every Part is grounded in a named external standard, listed in 00.3 and Appendix A.3.</p>
         <div class="scope-row">
-          <span class="chip">Procure‑to‑Pay</span><span class="chip">Cylinder inventory</span><span class="chip">Order‑to‑Cash</span><span class="chip">Treasury</span><span class="chip">Fixed assets</span><span class="chip">Payroll</span><span class="chip">Zakat &amp; VAT</span><span class="chip">FP&amp;A</span><span class="chip">Controls</span>
+          <span class="chip">Procure‑to‑Pay</span><span class="chip">Cylinder inventory</span><span class="chip">Order‑to‑Cash</span><span class="chip">Treasury</span><span class="chip">Fixed assets</span><span class="chip">Payroll</span><span class="chip">Zakat &amp; VAT</span><span class="chip">FP&amp;A</span><span class="chip">Controls</span><span class="chip">IFRS · COSO · WLPGA</span>
         </div>
         <div class="doc-control">
           <div><span class="k">Document</span><span class="v">BG‑FIN‑SOP‑001</span></div>
-          <div><span class="k">Version</span><span class="v">2.0 — Full finance scope</span></div>
+          <div><span class="k">Version</span><span class="v">3.0 — IFRS, COSO &amp; WLPGA aligned</span></div>
           <div><span class="k">Effective date</span><span class="v">7 August 2026</span></div>
           <div><span class="k">Currency / VAT</span><span class="v">SAR · 15% VAT</span></div>
           <div><span class="k">Owner</span><span class="v">Chief Financial Officer</span></div>
@@ -309,8 +311,36 @@
 
         <h3 class="sub"><span class="n">00.1</span>One structural rule that runs through everything</h3>
         <div class="prose">
-          <p>Best Gas treats the <strong>cylinder as inventory, never as a fixed asset</strong> — it is manufactured to a standard spec, held in stock at multiple locations, moves at very high velocity, and is costed and scrapped like a stock item, not depreciated like equipment. Practically, that means the gas and the cylinder are two separate inventory components fused into one physical unit: gas is a consumable that is sold and replaced; the cylinder is a durable container that is rented out against a deposit and must be tracked and recovered. Part III covers this in full depth. Every other Part assumes this split as background.</p>
+          <p>Best Gas treats the <strong>cylinder as inventory, never as a fixed asset</strong> — held in stock at multiple locations, moving at very high velocity, and costed and scrapped like a stock item rather than depreciated like equipment. Practically, that means the gas and the cylinder are two separate inventory components fused into one physical unit: gas is a consumable that is sold and replaced; the cylinder is a durable container that is sold, exchanged and recovered at high volume and must be tracked accordingly. Part III covers this in full depth. Every other Part assumes this split as background.</p>
         </div>
+
+        <h3 class="sub"><span class="n">00.2</span>What Best Gas is, and is not</h3>
+        <div class="callout warn">
+          <span class="lbl">Not a cylinder manufacturer</span>
+          <p>Best Gas does not fabricate steel cylinders. Cylinders are procured as finished trading inventory from qualified third‑party manufacturers whose products are certified to the relevant design and construction standard (<span class="pill std">ISO 4706</span>, adopted regionally through GSO/SASO technical regulations — see SOP‑07). Best Gas runs two operating lines only: <strong>(a) LPG gas distribution</strong> — bulk procurement, storage and filling of gas into cylinders it owns — and <strong>(b) high‑velocity cylinder trading</strong> — buying, selling, exchanging and recovering the cylinders themselves as fast‑moving stock, at a volume of several thousand units a month. Nothing in this manual should be read as implying an in‑house cylinder manufacturing operation.</p>
+        </div>
+        <p>That monthly volume is also the accounting justification for Section 00.1. Under <span class="pill std">IAS 2</span>, inventory is defined as assets <em>"held for sale in the ordinary course of business."</em> Returnable packaging held under a closed‑loop rental scheme — issued, always recovered, never sold outright — typically fails that test and sits in property, plant &amp; equipment (<span class="pill std">IAS 16</span>) instead. Best Gas's cylinder population does not behave that way: a material share of cylinders transacts as an outright first‑time exchange sale each month (SOP‑10), turnover is measured in thousands of units, and the population is managed, costed and written off exactly like merchandise. That fact pattern is what supports classifying cylinders as inventory rather than PP&amp;E, and it is the specific judgement Finance should be ready to defend to auditors — see 00.3.</p>
+
+        <h3 class="sub"><span class="n">00.3</span>Standards this manual is built on</h3>
+        <p>This manual is written against real external standards, not house convention alone, so any procedure in it can be traced back to why it exists.</p>
+        <div class="stdrow">
+          <span class="pill std">IFRS · SOCPA‑endorsed</span><span class="pill std">IAS 2</span><span class="pill std">IFRS 15</span><span class="pill std">IFRS 9</span><span class="pill std">IAS 16 / IAS 38</span><span class="pill std">COSO 2013</span><span class="pill std">WLPGA</span><span class="pill std">ISO 4706 / 10464</span><span class="pill std">ZATCA</span>
+        </div>
+        <div class="scroll"><table class="wide">
+          <thead><tr><th>Standard / body</th><th>Governs</th><th>Applied in</th></tr></thead>
+          <tbody>
+            <tr><td>IFRS, as endorsed by SOCPA for Saudi entities</td><td>Overall basis of financial statement preparation</td><td>Whole manual</td></tr>
+            <tr><td>IAS 2 — Inventories</td><td>Cost formulas, held‑for‑sale test behind the cylinder‑as‑inventory policy</td><td>Part III, 00.2</td></tr>
+            <tr><td>IFRS 15 — Revenue from Contracts with Customers</td><td>Five‑step recognition model for refill, exchange, app and B2B revenue</td><td>Part IV</td></tr>
+            <tr><td>IFRS 9 — Financial Instruments</td><td>Expected credit loss on B2B receivables; deposits as financial liabilities</td><td>SOP‑13, SOP‑14</td></tr>
+            <tr><td>IAS 16 / IAS 38 — PP&amp;E &amp; Intangible Assets</td><td>Fleet, plant and capitalised Souq Gas app development</td><td>Part VI</td></tr>
+            <tr><td>COSO Internal Control — Integrated Framework (2013)</td><td>Five‑component control structure</td><td>SOP‑29</td></tr>
+            <tr><td>WLPGA Guide to Good Industry Practices for LPG Cylinder Management, Filling &amp; Distribution</td><td>Cylinder lifecycle, filling and distribution‑channel practice</td><td>Part III</td></tr>
+            <tr><td>ISO 4706 / ISO 10464 (adopted regionally via GSO/SASO)</td><td>Cylinder design/construction and periodic inspection &amp; testing</td><td>SOP‑07</td></tr>
+            <tr><td>ZATCA Implementing Regulations</td><td>VAT, e‑invoicing (Phase 2) and Zakat</td><td>Part VIII</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:13px;color:var(--ink-faint);">Full titles and scope notes are consolidated in Appendix A.3. Where an exact clause, interval or threshold is region‑ or edition‑specific, this manual flags it for confirmation against the current locally adopted text rather than assuming a fixed figure.</p>
       </section>
 
       <section class="sop" id="coa">
@@ -404,7 +434,7 @@
           <div class="sop-tag">SOP‑04</div>
           <div class="sop-head-text"><span class="eyebrow">Procure‑to‑Pay</span><h2>Non‑Gas Procurement</h2></div>
         </div>
-        <p class="lede">Spare parts, cylinder valves and packaging, fleet parts, uniforms, IT and app‑vendor invoices — anything that isn't bulk gas or capex goes through this lighter‑weight path.</p>
+        <p class="lede">Spare parts, cylinder valves and packaging, fleet parts, uniforms, IT and app‑vendor invoices — anything that isn't bulk gas or capex goes through this lighter‑weight path. This is also the path new <strong>cylinders</strong> come in on: Best Gas buys finished, ISO 4706‑certified steel cylinders from qualified manufacturers as trading stock (see SOP‑07) — it does not fabricate them.</p>
         <div class="scroll"><table class="wide">
           <thead><tr><th>Purchase value (SAR)</th><th>Approval before PO issue</th></tr></thead>
           <tbody>
@@ -441,7 +471,7 @@
           <div class="sop-tag">SOP‑06</div>
           <div class="sop-head-text"><span class="eyebrow">Cylinder Operations</span><h2>Cylinder Filling Plant Operations</h2></div>
         </div>
-        <p class="lede">Filling is the moment an empty cylinder and bulk gas fuse into a sellable unit — financially, an inventory transformation, not a sale.</p>
+        <p class="lede">Filling is the moment an empty cylinder and bulk gas fuse into a sellable unit — financially, an inventory transformation, not a sale. This SOP covers <em>filling</em> only; Best Gas buys the cylinder itself finished from a third‑party manufacturer (SOP‑04) and never fabricates steel — see the <span class="pill std">WLPGA</span> Guide to Good Industry Practices for LPG Cylinder Filling, which this procedure follows for weigh‑in/weigh‑out and rejection handling.</p>
         <h3 class="sub"><span class="n">6.1</span>Sub‑inventory &amp; item structure</h3>
         <div class="scroll"><table class="wide">
           <thead><tr><th>Location</th><th>Holds</th><th>Owner</th></tr></thead>
@@ -477,11 +507,11 @@
           <div class="sop-tag">SOP‑07</div>
           <div class="sop-head-text"><span class="eyebrow">Cylinder Operations</span><h2>Cylinder Lifecycle: Registration to Condemnation</h2></div>
         </div>
-        <p class="lede">Every cylinder is serialised on receipt and tracked for its entire life, including the day it dies.</p>
+        <p class="lede">Every cylinder is serialised on receipt and tracked for its entire life, including the day it dies — the lifecycle structure follows the <span class="pill std">WLPGA</span> Guide to Good Industry Practices for LPG Cylinder Management (acquisition through disposal).</p>
         <div class="prose"><ol>
           <li>New cylinders received from the manufacturer are booked to <span class="num">EMPTY‑WH</span> at standard cost — never to a fixed asset account, regardless of unit value.</li>
           <li>Each unit is QR‑tagged before entering circulation and logged with size, gas type, manufacture date and first hydrostatic test date — this tag is what every scanner, POS and the Souq Gas driver app reads at every subsequent movement.</li>
-          <li>A cylinder is pulled to <span class="num">HOLD‑COND</span> on failed inspection, failed tare/check‑weigher, or an expired statutory hydrostatic re‑test (typically every 5 years under GCC cylinder standards).</li>
+          <li>A cylinder is pulled to <span class="num">HOLD‑COND</span> on failed inspection, failed tare/check‑weigher, or an expired periodic inspection/test — governed by <span class="pill std">ISO 4706</span> (design &amp; construction) and <span class="pill std">ISO 10464</span> (periodic inspection &amp; testing of refillable welded‑steel LPG cylinders), adopted regionally through GSO/SASO technical regulations. Confirm the exact re‑test interval currently in force locally before relying on a fixed number in this manual.</li>
           <li>Condemned units are batch‑scrapped monthly against a signed destruction certificate with photo evidence — required before the journal posts, so a "scrapped" cylinder can never quietly re‑enter circulation.</li>
         </ol></div>
         <div class="je">
@@ -524,6 +554,10 @@
         <div class="part-divider">
           <div class="pnum">IV</div>
           <div class="ptext"><span class="eyebrow peyebrow">Part IV</span><h2>Order‑to‑Cash</h2><p class="pdesc">Every way Best Gas turns gas into revenue — over the counter, on a van, through Souq Gas, or on a commercial contract.</p></div>
+        </div>
+        <div class="callout">
+          <span class="lbl">Recognition model — <span class="pill std">IFRS 15</span></span>
+          <p>Every revenue SOP in this Part applies the same five‑step model: (1) identify the contract — a POS ticket, an app order, or a signed B2B agreement; (2) identify the performance obligation(s) — gas delivered, and, on a first‑time exchange, none for the deposit itself, since it is not consideration for a supply; (3) determine the transaction price — gas value, deposit, delivery fee where charged; (4) allocate the price across distinct obligations; (5) recognise revenue when control transfers — at weigh‑out for a counter refill, at courier hand‑off for a B2B delivery, at <strong>Delivered</strong> status for the Souq Gas app (SOP‑11), never at order placement or cash receipt.</p>
         </div>
         <div class="sop-head">
           <div class="sop-tag">SOP‑09</div>
@@ -819,6 +853,7 @@
           <li>Output VAT excludes cylinder deposits (not consideration for a supply — see SOP‑10) and includes gas revenue across all channels.</li>
           <li>Monthly VAT return reconciles output VAT per the sales ledger, input VAT per the purchase ledger, and the ZATCA portal acknowledgement log before filing and payment by the statutory deadline.</li>
         </ol></div>
+        <div class="callout warn"><span class="lbl">Phase 2 is not optional at this scale</span><p>ZATCA's Phase 2 integration waves have progressively lowered the mandatory threshold — down to taxable turnover above SAR 375,000 by mid‑2026. A distributor selling thousands of cylinders a month is far above any wave threshold in force and must already be fully integrated; this is a live compliance requirement, not a future milestone.</p></div>
       </section>
 
       <section class="sop" id="sop24">
@@ -918,9 +953,18 @@
       <section class="sop" id="sop29">
         <div class="sop-head">
           <div class="sop-tag">SOP‑29</div>
-          <div class="sop-head-text"><span class="eyebrow">Close &amp; Control</span><h2>Segregation of Duties by Cycle</h2></div>
+          <div class="sop-head-text"><span class="eyebrow">Close &amp; Control</span><h2>Internal Control Structure — SoD by Cycle</h2></div>
         </div>
-        <p class="lede">No single role should be able to originate, approve and record the same transaction across any cycle.</p>
+        <p class="lede">Controls are organised on the <span class="pill std">COSO 2013</span> Internal Control — Integrated Framework's five components, so every control below maps to a structure an external auditor already tests against.</p>
+
+        <h3 class="sub"><span class="n">29.1</span>Control environment</h3>
+        <p>The CFO owns this manual; every Part has a named process owner (stated in its RACI/approval tables); no owner may also be the sole approver of their own transactions. Annual sign‑off of this manual by the CFO and Audit Committee is the formal control‑environment attestation.</p>
+
+        <h3 class="sub"><span class="n">29.2</span>Risk assessment</h3>
+        <p>Risk is reassessed at defined trigger points already built into this manual, not on a separate schedule: variance thresholds (SOP‑08, SOP‑16), B2B credit limits and ECL banding (SOP‑13), capex business cases (SOP‑18), and the insurance/claims log (SOP‑30). A consolidated risk register is reviewed at each quarterly board pack (SOP‑27).</p>
+
+        <h3 class="sub"><span class="n">29.3</span>Control activities — segregation of duties</h3>
+        <p>No single role originates, approves and records the same transaction across any cycle.</p>
         <div class="scroll"><table class="wide raci">
           <thead><tr><th>Activity</th><th class="center">Originates</th><th class="center">Approves</th><th class="center">Records in GL</th></tr></thead>
           <tbody>
@@ -936,6 +980,12 @@
             <tr><td>Zakat/VAT filing (SOP‑23–24)</td><td class="center">Tax Accountant</td><td class="center">CFO</td><td class="center">Tax Accountant (files)</td></tr>
           </tbody>
         </table></div>
+
+        <h3 class="sub"><span class="n">29.4</span>Information &amp; communication</h3>
+        <p>Nana Financials is the single GL of record; the Souq Gas app is the single source of delivery/van truth (SOP‑11, SOP‑16); neither system is overridden by a spreadsheet. The monthly management pack (SOP‑27) is how control‑relevant information reaches the CFO and Board on a fixed cadence, not on an ad‑hoc basis.</p>
+
+        <h3 class="sub"><span class="n">29.5</span>Monitoring activities</h3>
+        <p>Ongoing monitoring: daily van reconciliation (SOP‑16), daily cash position (SOP‑15). Periodic monitoring: monthly cylinder counts (SOP‑08), monthly close (SOP‑28), annual full physical count and annual re‑vetting of critical vendors (SOP‑02). Independent monitoring: internal audit testing of this SoD matrix at least annually, with findings reported directly to the Audit Committee, not through the process owner being tested.</p>
       </section>
 
       <section class="sop" id="sop30">
@@ -986,12 +1036,33 @@
           <li>Monthly cylinder count &amp; variance report</li>
           <li>Insurance claim log</li>
         </ul></div>
-        <h3 class="sub"><span class="n">A.3</span>Revision history</h3>
+        <h3 class="sub"><span class="n">A.3</span>Standards register</h3>
+        <div class="scroll"><table class="wide">
+          <thead><tr><th>Reference</th><th>Full title</th><th>Issuing body</th></tr></thead>
+          <tbody>
+            <tr><td class="num">IAS 2</td><td>Inventories</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">IFRS 15</td><td>Revenue from Contracts with Customers</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">IFRS 9</td><td>Financial Instruments</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">IAS 16</td><td>Property, Plant and Equipment</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">IAS 38</td><td>Intangible Assets</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">IAS 37</td><td>Provisions, Contingent Liabilities and Contingent Assets</td><td>IFRS Foundation / IASB</td></tr>
+            <tr><td class="num">COSO 2013</td><td>Internal Control — Integrated Framework</td><td>Committee of Sponsoring Organizations of the Treadway Commission</td></tr>
+            <tr><td class="num">WLPGA</td><td>Guides to Good Industry Practices for LPG Cylinder Management / Filling / Distribution Channel</td><td>World Liquid Gas Association</td></tr>
+            <tr><td class="num">ISO 4706</td><td>Refillable welded steel cylinders for LPG — Design and construction</td><td>International Organization for Standardization</td></tr>
+            <tr><td class="num">ISO 10464</td><td>Gas cylinders — Refillable welded steel cylinders for LPG — Periodic inspection and testing</td><td>International Organization for Standardization</td></tr>
+            <tr><td class="num">GSO / SASO</td><td>Regional adoption of the above ISO standards in Saudi Arabia and the GCC</td><td>GCC Standardization Organization / Saudi Standards, Metrology and Quality Authority</td></tr>
+            <tr><td class="num">ZATCA</td><td>VAT Implementing Regulations, E‑Invoicing (Fatoora) Resolution, Zakat Implementing Regulations</td><td>Zakat, Tax and Customs Authority</td></tr>
+          </tbody>
+        </table></div>
+        <p style="font-size:13px;color:var(--ink-faint);">Standards are cited for the process they govern conceptually; always confirm the current locally adopted edition, interval or threshold before relying on a specific figure in this manual.</p>
+
+        <h3 class="sub"><span class="n">A.4</span>Revision history</h3>
         <div class="scroll"><table>
           <thead><tr><th>Version</th><th>Date</th><th>Change</th></tr></thead>
           <tbody>
             <tr><td class="num">1.0</td><td class="num">2026‑08‑07</td><td>Initial draft — cylinder inventory &amp; finance scope only</td></tr>
             <tr><td class="num">2.0</td><td class="num">2026‑08‑07</td><td>Expanded to full finance function: procure‑to‑pay, treasury, fixed assets, payroll, Zakat/VAT, planning, and cycle‑wide close &amp; controls</td></tr>
+            <tr><td class="num">3.0</td><td class="num">2026‑08‑07</td><td>Grounded in named external standards (IFRS/SOCPA, COSO 2013, WLPGA, ISO 4706/10464, ZATCA); clarified that Best Gas purchases cylinders as trading inventory and does not manufacture them; recast Part IV revenue recognition under IFRS 15 and Part X controls under the COSO five‑component structure</td></tr>
           </tbody>
         </table></div>
       </section>
@@ -1000,7 +1071,7 @@
 
     <footer class="colophon">
       <div class="fline">
-        <span>BG‑FIN‑SOP‑001 · v2.0</span>
+        <span>BG‑FIN‑SOP‑001 · v3.0</span>
         <span>Best Gas — Finance Standard Operating Procedures Manual</span>
         <span>Prepared for Nana Financials</span>
       </div>
