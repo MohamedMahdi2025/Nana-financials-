@@ -492,110 +492,116 @@
 </head>
 <body>
 <div class="progress"><i id="bar"></i></div>
-<button aria-label="Open contents" class="railbtn" id="railBtn" type="button">&#9776;</button>
+<button class="railbtn" id="railBtn" type="button" aria-label="Open contents">&#9776;</button>
 <div class="scrim" id="scrim"></div>
-<nav aria-label="Contents" class="rail" id="rail">
-<div class="rail-inner">
-<div class="rail-top">
-<div class="brand">
-<span aria-hidden="true" class="mark"></span>
-<span class="brand-txt">
-<span class="brand-name">BEST GAS</span>
-<span class="brand-sub">Finance SOP Manual &#183; v3.0</span>
-</span>
-</div>
-<button aria-pressed="false" class="pin" id="pin" title="Pin sidebar open" type="button">&#128204;</button>
-<div class="search">
-<svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
-<input aria-label="Search procedures" id="q" placeholder="Search procedures&#8230;" type="search"/>
-</div>
-</div>
-<div class="navwrap" id="navwrap">
-<ul class="navlist">
-<li class="navgroup"><span class="nr">I</span><span class="gname">Foundations</span></li>
-<li><a data-target="model" href="#model" title="The LPG Value Chain, In One Loop"><span class="tag">00</span><span class="lbl">The LPG Value Chain, In One Loop</span></a></li>
-<li><a data-target="coa" href="#coa" title="Group Chart of Accounts"><span class="tag">01</span><span class="lbl">Group Chart of Accounts</span></a></li>
-<li class="navgroup"><span class="nr">II</span><span class="gname">Procure&#8209;to&#8209;Pay</span></li>
-<li><a data-target="sop02" href="#sop02" title="Vendor Master &amp; Onboarding"><span class="tag">SOP&#8209;02</span><span class="lbl">Vendor Master &amp; Onboarding</span></a></li>
-<li><a data-target="sop03" href="#sop03" title="Bulk LPG Procurement &amp; Receiving"><span class="tag">SOP&#8209;03</span><span class="lbl">Bulk LPG Procurement &amp; Receiving</span></a></li>
-<li><a data-target="sop04" href="#sop04" title="Non&#8209;Gas Procurement"><span class="tag">SOP&#8209;04</span><span class="lbl">Non&#8209;Gas Procurement</span></a></li>
-<li><a data-target="sop05" href="#sop05" title="Accounts Payable &amp; Payment Runs"><span class="tag">SOP&#8209;05</span><span class="lbl">Accounts Payable &amp; Payment Runs</span></a></li>
-<li class="navgroup"><span class="nr">III</span><span class="gname">Cylinder &amp; Filling Operations</span></li>
-<li><a data-target="sop06" href="#sop06" title="Cylinder Filling Plant Operations"><span class="tag">SOP&#8209;06</span><span class="lbl">Cylinder Filling Plant Operations</span></a></li>
-<li><a data-target="sop07" href="#sop07" title="Cylinder Lifecycle: Registration to Condemnation"><span class="tag">SOP&#8209;07</span><span class="lbl">Cylinder Lifecycle: Registration to Condemnation</span></a></li>
-<li><a data-target="sop08" href="#sop08" title="Physical Cylinder Count &amp; Reconciliation"><span class="tag">SOP&#8209;08</span><span class="lbl">Physical Cylinder Count &amp; Reconciliation</span></a></li>
-<li class="navgroup"><span class="nr">IV</span><span class="gname">Order&#8209;to&#8209;Cash</span></li>
-<li><a data-target="sop09" href="#sop09" title="Refill Sale &#8212; Customer's Own Cylinder"><span class="tag">SOP&#8209;09</span><span class="lbl">Refill Sale &#8212; Customer's Own Cylinder</span></a></li>
-<li><a data-target="sop10" href="#sop10" title="Cylinder Exchange &#8212; Empty&#8209;for&#8209;Full Swap"><span class="tag">SOP&#8209;10</span><span class="lbl">Cylinder Exchange &#8212; Empty&#8209;for&#8209;Full Swap</span></a></li>
-<li><a data-target="sop11" href="#sop11" title="Souq Gas App &#8212; Order to Cash &amp; Van Inventory"><span class="tag">SOP&#8209;11</span><span class="lbl">Souq Gas App &#8212; Order to Cash &amp; Van Inventory</span></a></li>
-<li><a data-target="sop12" href="#sop12" title="B2B Commercial &amp; Industrial Contracts"><span class="tag">SOP&#8209;12</span><span class="lbl">B2B Commercial &amp; Industrial Contracts</span></a></li>
-<li><a data-target="sop13" href="#sop13" title="Credit Control, Collections &amp; Bad Debt"><span class="tag">SOP&#8209;13</span><span class="lbl">Credit Control, Collections &amp; Bad Debt</span></a></li>
-<li><a data-target="sop14" href="#sop14" title="Empty Cylinder Return &amp; Deposit Refund"><span class="tag">SOP&#8209;14</span><span class="lbl">Empty Cylinder Return &amp; Deposit Refund</span></a></li>
-<li class="navgroup"><span class="nr">V</span><span class="gname">Treasury &amp; Cash Management</span></li>
-<li><a data-target="sop15" href="#sop15" title="Banking, Signatories &amp; Daily Cash Position"><span class="tag">SOP&#8209;15</span><span class="lbl">Banking, Signatories &amp; Daily Cash Position</span></a></li>
-<li><a data-target="sop16" href="#sop16" title="Van Cash, POS &amp; Payment Gateway Settlement"><span class="tag">SOP&#8209;16</span><span class="lbl">Van Cash, POS &amp; Payment Gateway Settlement</span></a></li>
-<li><a data-target="sop17" href="#sop17" title="Petty Cash"><span class="tag">SOP&#8209;17</span><span class="lbl">Petty Cash</span></a></li>
-<li class="navgroup"><span class="nr">VI</span><span class="gname">Fixed Assets &amp; Capital Expenditure</span></li>
-<li><a data-target="sop18" href="#sop18" title="Capital Expenditure Approval"><span class="tag">SOP&#8209;18</span><span class="lbl">Capital Expenditure Approval</span></a></li>
-<li><a data-target="sop19" href="#sop19" title="Asset Register, Depreciation &amp; Disposal"><span class="tag">SOP&#8209;19</span><span class="lbl">Asset Register, Depreciation &amp; Disposal</span></a></li>
-<li class="navgroup"><span class="nr">VII</span><span class="gname">People Costs</span></li>
-<li><a data-target="sop20" href="#sop20" title="Payroll Processing &amp; GOSI"><span class="tag">SOP&#8209;20</span><span class="lbl">Payroll Processing &amp; GOSI</span></a></li>
-<li><a data-target="sop21" href="#sop21" title="Driver &amp; Sales Incentive Schemes"><span class="tag">SOP&#8209;21</span><span class="lbl">Driver &amp; Sales Incentive Schemes</span></a></li>
-<li><a data-target="sop22" href="#sop22" title="End&#8209;of&#8209;Service Benefits"><span class="tag">SOP&#8209;22</span><span class="lbl">End&#8209;of&#8209;Service Benefits</span></a></li>
-<li class="navgroup"><span class="nr">VIII</span><span class="gname">Tax &amp; Zakat</span></li>
-<li><a data-target="sop23" href="#sop23" title="VAT &amp; ZATCA E&#8209;Invoicing"><span class="tag">SOP&#8209;23</span><span class="lbl">VAT &amp; ZATCA E&#8209;Invoicing</span></a></li>
-<li><a data-target="sop24" href="#sop24" title="Zakat Computation &amp; Filing"><span class="tag">SOP&#8209;24</span><span class="lbl">Zakat Computation &amp; Filing</span></a></li>
-<li><a data-target="sop25" href="#sop25" title="Withholding Tax on Foreign Payments"><span class="tag">SOP&#8209;25</span><span class="lbl">Withholding Tax on Foreign Payments</span></a></li>
-<li class="navgroup"><span class="nr">IX</span><span class="gname">Planning &amp; Management Reporting</span></li>
-<li><a data-target="sop26" href="#sop26" title="Annual Budget &amp; Rolling Forecast"><span class="tag">SOP&#8209;26</span><span class="lbl">Annual Budget &amp; Rolling Forecast</span></a></li>
-<li><a data-target="sop27" href="#sop27" title="Management &amp; Board Reporting"><span class="tag">SOP&#8209;27</span><span class="lbl">Management &amp; Board Reporting</span></a></li>
-<li><a data-target="kpi" href="#kpi" title="The Finance Scorecard"><span class="tag">KPI</span><span class="lbl">The Finance Scorecard</span></a></li>
-<li class="navgroup"><span class="nr">X</span><span class="gname">Period&#8209;End Close &amp; Controls</span></li>
-<li><a data-target="sop28" href="#sop28" title="Month&#8209;End Close &#8212; All Cycles"><span class="tag">SOP&#8209;28</span><span class="lbl">Month&#8209;End Close &#8212; All Cycles</span></a></li>
-<li><a data-target="sop29" href="#sop29" title="Internal Control Structure &#8212; SoD by Cycle"><span class="tag">SOP&#8209;29</span><span class="lbl">Internal Control Structure &#8212; SoD by Cycle</span></a></li>
-<li><a data-target="sop30" href="#sop30" title="Insurance &amp; Business Continuity"><span class="tag">SOP&#8209;30</span><span class="lbl">Insurance &amp; Business Continuity</span></a></li>
-<li><a data-target="appendix" href="#appendix" title="Appendix"><span class="tag">App.</span><span class="lbl">Appendix</span></a></li>
-</ul>
-<p class="noresult" id="noresult">No procedure matches that search.</p>
-</div>
-</div>
+
+<nav class="rail" id="rail" aria-label="Contents">
+  <div class="rail-inner">
+    <div class="rail-top">
+      <div class="brand">
+        <span class="mark" aria-hidden="true"></span>
+        <span class="brand-txt">
+          <span class="brand-name">BEST GAS</span>
+          <span class="brand-sub">Finance SOP Manual &middot; v3.0</span>
+        </span>
+      </div>
+      <button class="pin" id="pin" type="button" aria-pressed="false"
+              title="Pin sidebar open">&#128204;</button>
+      <div class="search">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+        <input id="q" type="search" placeholder="Search procedures&hellip;" aria-label="Search procedures" />
+      </div>
+    </div>
+    <div class="navwrap" id="navwrap">
+      <ul class="navlist">
+      <li class="navgroup"><span class="nr">I</span><span class="gname">Foundations</span></li>
+      <li><a href="#model" data-target="model" title="The LPG Value Chain, In One Loop"><span class="tag">00</span><span class="lbl">The LPG Value Chain, In One Loop</span></a></li>
+      <li><a href="#coa" data-target="coa" title="Group Chart of Accounts"><span class="tag">01</span><span class="lbl">Group Chart of Accounts</span></a></li>
+      <li class="navgroup"><span class="nr">II</span><span class="gname">Procure&#8209;to&#8209;Pay</span></li>
+      <li><a href="#sop02" data-target="sop02" title="Vendor Master & Onboarding"><span class="tag">SOP&#8209;02</span><span class="lbl">Vendor Master & Onboarding</span></a></li>
+      <li><a href="#sop03" data-target="sop03" title="Bulk LPG Procurement & Receiving"><span class="tag">SOP&#8209;03</span><span class="lbl">Bulk LPG Procurement & Receiving</span></a></li>
+      <li><a href="#sop04" data-target="sop04" title="Non&#8209;Gas Procurement"><span class="tag">SOP&#8209;04</span><span class="lbl">Non&#8209;Gas Procurement</span></a></li>
+      <li><a href="#sop05" data-target="sop05" title="Accounts Payable & Payment Runs"><span class="tag">SOP&#8209;05</span><span class="lbl">Accounts Payable & Payment Runs</span></a></li>
+      <li class="navgroup"><span class="nr">III</span><span class="gname">Cylinder & Filling Operations</span></li>
+      <li><a href="#sop06" data-target="sop06" title="Cylinder Filling Plant Operations"><span class="tag">SOP&#8209;06</span><span class="lbl">Cylinder Filling Plant Operations</span></a></li>
+      <li><a href="#sop07" data-target="sop07" title="Cylinder Lifecycle: Registration to Condemnation"><span class="tag">SOP&#8209;07</span><span class="lbl">Cylinder Lifecycle: Registration to Condemnation</span></a></li>
+      <li><a href="#sop08" data-target="sop08" title="Physical Cylinder Count & Reconciliation"><span class="tag">SOP&#8209;08</span><span class="lbl">Physical Cylinder Count & Reconciliation</span></a></li>
+      <li class="navgroup"><span class="nr">IV</span><span class="gname">Order&#8209;to&#8209;Cash</span></li>
+      <li><a href="#sop09" data-target="sop09" title="Refill Sale &#8212; Customer's Own Cylinder"><span class="tag">SOP&#8209;09</span><span class="lbl">Refill Sale &#8212; Customer's Own Cylinder</span></a></li>
+      <li><a href="#sop10" data-target="sop10" title="Cylinder Exchange &#8212; Empty&#8209;for&#8209;Full Swap"><span class="tag">SOP&#8209;10</span><span class="lbl">Cylinder Exchange &#8212; Empty&#8209;for&#8209;Full Swap</span></a></li>
+      <li><a href="#sop11" data-target="sop11" title="Souq Gas App &#8212; Order to Cash & Van Inventory"><span class="tag">SOP&#8209;11</span><span class="lbl">Souq Gas App &#8212; Order to Cash & Van Inventory</span></a></li>
+      <li><a href="#sop12" data-target="sop12" title="B2B Commercial & Industrial Contracts"><span class="tag">SOP&#8209;12</span><span class="lbl">B2B Commercial & Industrial Contracts</span></a></li>
+      <li><a href="#sop13" data-target="sop13" title="Credit Control, Collections & Bad Debt"><span class="tag">SOP&#8209;13</span><span class="lbl">Credit Control, Collections & Bad Debt</span></a></li>
+      <li><a href="#sop14" data-target="sop14" title="Empty Cylinder Return & Deposit Refund"><span class="tag">SOP&#8209;14</span><span class="lbl">Empty Cylinder Return & Deposit Refund</span></a></li>
+      <li class="navgroup"><span class="nr">V</span><span class="gname">Treasury & Cash Management</span></li>
+      <li><a href="#sop15" data-target="sop15" title="Banking, Signatories & Daily Cash Position"><span class="tag">SOP&#8209;15</span><span class="lbl">Banking, Signatories & Daily Cash Position</span></a></li>
+      <li><a href="#sop16" data-target="sop16" title="Van Cash, POS & Payment Gateway Settlement"><span class="tag">SOP&#8209;16</span><span class="lbl">Van Cash, POS & Payment Gateway Settlement</span></a></li>
+      <li><a href="#sop17" data-target="sop17" title="Petty Cash"><span class="tag">SOP&#8209;17</span><span class="lbl">Petty Cash</span></a></li>
+      <li class="navgroup"><span class="nr">VI</span><span class="gname">Fixed Assets & Capital Expenditure</span></li>
+      <li><a href="#sop18" data-target="sop18" title="Capital Expenditure Approval"><span class="tag">SOP&#8209;18</span><span class="lbl">Capital Expenditure Approval</span></a></li>
+      <li><a href="#sop19" data-target="sop19" title="Asset Register, Depreciation & Disposal"><span class="tag">SOP&#8209;19</span><span class="lbl">Asset Register, Depreciation & Disposal</span></a></li>
+      <li class="navgroup"><span class="nr">VII</span><span class="gname">People Costs</span></li>
+      <li><a href="#sop20" data-target="sop20" title="Payroll Processing & GOSI"><span class="tag">SOP&#8209;20</span><span class="lbl">Payroll Processing & GOSI</span></a></li>
+      <li><a href="#sop21" data-target="sop21" title="Driver & Sales Incentive Schemes"><span class="tag">SOP&#8209;21</span><span class="lbl">Driver & Sales Incentive Schemes</span></a></li>
+      <li><a href="#sop22" data-target="sop22" title="End&#8209;of&#8209;Service Benefits"><span class="tag">SOP&#8209;22</span><span class="lbl">End&#8209;of&#8209;Service Benefits</span></a></li>
+      <li class="navgroup"><span class="nr">VIII</span><span class="gname">Tax & Zakat</span></li>
+      <li><a href="#sop23" data-target="sop23" title="VAT & ZATCA E&#8209;Invoicing"><span class="tag">SOP&#8209;23</span><span class="lbl">VAT & ZATCA E&#8209;Invoicing</span></a></li>
+      <li><a href="#sop24" data-target="sop24" title="Zakat Computation & Filing"><span class="tag">SOP&#8209;24</span><span class="lbl">Zakat Computation & Filing</span></a></li>
+      <li><a href="#sop25" data-target="sop25" title="Withholding Tax on Foreign Payments"><span class="tag">SOP&#8209;25</span><span class="lbl">Withholding Tax on Foreign Payments</span></a></li>
+      <li class="navgroup"><span class="nr">IX</span><span class="gname">Planning & Management Reporting</span></li>
+      <li><a href="#sop26" data-target="sop26" title="Annual Budget & Rolling Forecast"><span class="tag">SOP&#8209;26</span><span class="lbl">Annual Budget & Rolling Forecast</span></a></li>
+      <li><a href="#sop27" data-target="sop27" title="Management & Board Reporting"><span class="tag">SOP&#8209;27</span><span class="lbl">Management & Board Reporting</span></a></li>
+      <li><a href="#kpi" data-target="kpi" title="The Finance Scorecard"><span class="tag">KPI</span><span class="lbl">The Finance Scorecard</span></a></li>
+      <li class="navgroup"><span class="nr">X</span><span class="gname">Period&#8209;End Close & Controls</span></li>
+      <li><a href="#sop28" data-target="sop28" title="Month&#8209;End Close &#8212; All Cycles"><span class="tag">SOP&#8209;28</span><span class="lbl">Month&#8209;End Close &#8212; All Cycles</span></a></li>
+      <li><a href="#sop29" data-target="sop29" title="Internal Control Structure &#8212; SoD by Cycle"><span class="tag">SOP&#8209;29</span><span class="lbl">Internal Control Structure &#8212; SoD by Cycle</span></a></li>
+      <li><a href="#sop30" data-target="sop30" title="Insurance & Business Continuity"><span class="tag">SOP&#8209;30</span><span class="lbl">Insurance & Business Continuity</span></a></li>
+      <li><a href="#appendix" data-target="appendix" title="Appendix"><span class="tag">App.</span><span class="lbl">Appendix</span></a></li>
+      </ul>
+      <p class="noresult" id="noresult">No procedure matches that search.</p>
+    </div>
+  </div>
 </nav>
+
 <div class="page">
-<header class="hero">
-<span aria-hidden="true" class="glow g1"></span>
-<span aria-hidden="true" class="glow g2"></span>
-<div class="hero-in">
-<div class="plate">Controlled Document &#183; Office of the CFO</div>
-<h1>Best Gas<br/><em>Finance</em> SOP Manual</h1>
-<p class="dek">The complete standard operating procedure set for Best Gas Finance &#8212;
+
+  <header class="hero">
+    <span class="glow g1" aria-hidden="true"></span>
+    <span class="glow g2" aria-hidden="true"></span>
+    <div class="hero-in">
+      <div class="plate">Controlled Document &middot; Office of the CFO</div>
+      <h1>Best Gas<br/><em>Finance</em> SOP Manual</h1>
+      <p class="dek">The complete standard operating procedure set for Best Gas Finance &mdash;
         procurement and payables, cylinder &amp; filling operations, order-to-cash across refill,
         exchange and the <strong>Souq Gas</strong> app, treasury and cash, fixed assets, payroll,
         Zakat &amp; VAT, planning, and period-end close. Best Gas buys cylinders as trading
         inventory and distributes LPG gas; it does not manufacture cylinders.</p>
-<div class="stats">
-<div class="stat"><b data-count="29">0</b><span>Procedures</span></div>
-<div class="stat"><b data-count="10">0</b><span>Cycles covered</span></div>
-<div class="stat"><b data-count="9">0</b><span>Standards cited</span></div>
-<div class="stat"><b data-count="15" data-suffix="%">0</b><span>VAT &#183; SAR</span></div>
-</div>
-<div class="chips">
-<span>Procure-to-Pay</span><span>Cylinder inventory</span><span>Order-to-Cash</span>
-<span>Treasury</span><span>Fixed assets</span><span>Payroll</span>
-<span>Zakat &amp; VAT</span><span>FP&amp;A</span><span>Controls</span>
-</div>
-<div class="docgrid">
-<div><span class="k">Document</span><span class="v">BG-FIN-SOP-001</span></div>
-<div><span class="k">Version</span><span class="v">3.0 &#8212; IFRS, COSO &amp; WLPGA aligned</span></div>
-<div><span class="k">Effective date</span><span class="v">7 August 2026</span></div>
-<div><span class="k">Currency / VAT</span><span class="v">SAR &#183; 15% VAT</span></div>
-<div><span class="k">Owner</span><span class="v">Chief Financial Officer</span></div>
-<div><span class="k">Applies to</span><span class="v">Plants, branches, vans, app, HQ</span></div>
-<div><span class="k">Review cycle</span><span class="v">Annual, or on process change</span></div>
-<div><span class="k">Related system</span><span class="v">Nana Financials &#183; Souq Gas</span></div>
-</div>
-</div>
-</header>
-<div class="wrap">
+      <div class="stats">
+        <div class="stat"><b data-count="29">0</b><span>Procedures</span></div>
+        <div class="stat"><b data-count="10">0</b><span>Cycles covered</span></div>
+        <div class="stat"><b data-count="9">0</b><span>Standards cited</span></div>
+        <div class="stat"><b data-count="15" data-suffix="%">0</b><span>VAT &middot; SAR</span></div>
+      </div>
+      <div class="chips">
+        <span>Procure-to-Pay</span><span>Cylinder inventory</span><span>Order-to-Cash</span>
+        <span>Treasury</span><span>Fixed assets</span><span>Payroll</span>
+        <span>Zakat &amp; VAT</span><span>FP&amp;A</span><span>Controls</span>
+      </div>
+      <div class="docgrid">
+        <div><span class="k">Document</span><span class="v">BG-FIN-SOP-001</span></div>
+        <div><span class="k">Version</span><span class="v">3.0 &mdash; IFRS, COSO &amp; WLPGA aligned</span></div>
+        <div><span class="k">Effective date</span><span class="v">7 August 2026</span></div>
+        <div><span class="k">Currency / VAT</span><span class="v">SAR &middot; 15% VAT</span></div>
+        <div><span class="k">Owner</span><span class="v">Chief Financial Officer</span></div>
+        <div><span class="k">Applies to</span><span class="v">Plants, branches, vans, app, HQ</span></div>
+        <div><span class="k">Review cycle</span><span class="v">Annual, or on process change</span></div>
+        <div><span class="k">Related system</span><span class="v">Nana Financials &middot; Souq Gas</span></div>
+      </div>
+    </div>
+  </header>
+
+  <div class="wrap">
+
 <section class="sop" id="model">
 <div class="part-divider">
 <div class="pnum">I</div>
@@ -641,6 +647,7 @@
 </table></div>
 <p style="font-size:13px;color:var(--ink-faint);">Full titles and scope notes are consolidated in Appendix A.3. Where an exact clause, interval or threshold is region&#8209; or edition&#8209;specific, this manual flags it for confirmation against the current locally adopted text rather than assuming a fixed figure.</p>
 </section>
+
 <section class="sop" id="coa">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">01</div>
@@ -673,6 +680,7 @@
 </table></div>
 <div class="callout"><span class="lbl">Rule of thumb</span><p>If you don't know which account to post to, find the cycle first from the block table, then open that Part &#8212; every Part below opens with its own detailed sub&#8209;account list where one is needed.</p></div>
 </section>
+
 <section class="sop" id="sop02">
 <div class="part-divider">
 <div class="pnum">II</div>
@@ -690,6 +698,7 @@
 </ol></div>
 <div class="callout crit"><span class="lbl">Common fraud pattern</span><p>Bank&#8209;detail&#8209;change emails are the single most common vendor fraud vector. The callback&#8209;verification step in item 4 is not optional and is not delegable to whoever is fastest to process the change.</p></div>
 </section>
+
 <section class="sop" id="sop03">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;03</div>
@@ -719,6 +728,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop04">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;04</div>
@@ -735,6 +745,7 @@
 </table></div>
 <p>Goods/services receipt is confirmed by the requesting department before the invoice is booked; Accounts Payable never books an invoice against a PO with no matching receipt.</p>
 </section>
+
 <section class="sop" id="sop05">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;05</div>
@@ -747,6 +758,7 @@
 <li>Payment remittance advice sent to vendor same day; AP aging reviewed weekly for early&#8209;payment discount opportunities and overdue exposure.</li>
 </ol></div>
 </section>
+
 <section class="sop" id="sop06">
 <div class="part-divider">
 <div class="pnum">III</div>
@@ -763,7 +775,7 @@
 <tr><td class="num">WIP&#8209;FILL</td><td>Cylinders mid&#8209;fill, not yet QC&#8209;released</td><td>Filling Supervisor</td></tr>
 <tr><td class="num">FG&#8209;FULL&#8209;WH / VAN</td><td>Full cylinders, warehouse and van stock</td><td>Warehouse Keeper / Driver</td></tr>
 <tr><td class="num">EMPTY&#8209;WH / VAN</td><td>Empty cylinders awaiting refill</td><td>Warehouse Keeper / Driver</td></tr>
-<tr><td class="num">CUST&#8209;DEPOSIT</td><td>Memo register &#8212; cylinders with customers under deposit</td><td>Inventory Control</td></tr>
+<tr><td class="num">CUST&#8209;DEPOSIT</td><td>Memo register &#8212; cylinders with customers under deposit</td><td>Inventory &amp; Settlement Control</td></tr>
 <tr><td class="num">HOLD&#8209;COND</td><td>Condemned holding cage</td><td>Plant Manager</td></tr>
 </tbody>
 </table></div></div>
@@ -783,6 +795,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop07">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;07</div>
@@ -802,6 +815,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop08">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;08</div>
@@ -820,12 +834,13 @@
 <div class="scroll"><table>
 <thead><tr><th>Variance value per count cycle</th><th>Approval</th></tr></thead>
 <tbody>
-<tr><td class="num">Up to SAR 5,000</td><td>Inventory Controller</td></tr>
+<tr><td class="num">Up to SAR 5,000</td><td>Inventory &amp; Settlement Controller</td></tr>
 <tr><td class="num">5,001 &#8211; 25,000</td><td>Finance Manager</td></tr>
 <tr><td class="num">Above 25,000</td><td>CFO, with root&#8209;cause report</td></tr>
 </tbody>
 </table></div>
 </section>
+
 <section class="sop" id="sop09">
 <div class="part-divider">
 <div class="pnum">IV</div>
@@ -858,6 +873,7 @@
 </div>
 <div class="callout crit"><span class="lbl">Fraud control</span><p>The pre&#8209;/post&#8209;weigh&#8209;in must print on the receipt. An attendant whose average fill weight trends below 97% of rated capacity over a rolling week is flagged for supervisor review.</p></div>
 </section>
+
 <section class="sop" id="sop10">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;10</div>
@@ -879,6 +895,7 @@
 </div></div>
 <div class="keep"><h3 class="sub"><span class="n">10.2</span>Repeat exchange</h3><p>No deposit movement &#8212; only the gas is charged; the empty steel received back moves <span class="num">CUST&#8209;DEPOSIT &#8594; EMPTY&#8209;WH</span>. A returned unit too damaged to repair is flagged to <span class="num">HOLD&#8209;COND</span> instead, and a partial deposit top&#8209;up restores the deposit to full replacement value.</p></div>
 </section>
+
 <section class="sop" id="sop11">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;11</div>
@@ -896,6 +913,7 @@
 <p>Payment methods: cash on delivery (the exception, not the default &#8212; cash is what disappears), card on delivery, and the Souq Gas wallet. Wallet top&#8209;ups post as liability <span class="num">2211</span>, exactly like a prepaid gift balance, until consumed against a delivered order.</p>
 <p>Every shift closes only when three records agree: the <strong>app delivery log</strong>, the <strong>warehouse gate scan</strong>, and the <strong>GL posting batch</strong>. Full end&#8209;of&#8209;day van cash and stock reconciliation mechanics are detailed in SOP&#8209;16 (Treasury).</p>
 </section>
+
 <section class="sop" id="sop12">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;12</div>
@@ -908,6 +926,7 @@
 <li>Large industrial cylinder pools (e.g. 48 kg catering cylinders placed at a single site) carry a security deposit sized to the pool, tracked the same way as retail deposits (SOP&#8209;10) but against the account, not an individual serial.</li>
 </ol></div>
 </section>
+
 <section class="sop" id="sop13">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;13</div>
@@ -916,7 +935,7 @@
 <div class="scroll"><table class="wide">
 <thead><tr><th>Credit limit requested</th><th>Approval</th></tr></thead>
 <tbody>
-<tr><td class="num">Up to SAR 50,000</td><td>Credit Controller</td></tr>
+<tr><td class="num">Up to SAR 50,000</td><td>Receivables &amp; Credit Accountant</td></tr>
 <tr><td class="num">50,001 &#8211; 250,000</td><td>Finance Manager</td></tr>
 <tr><td class="num">Above 250,000</td><td>CFO, with bank reference and trade references on file</td></tr>
 </tbody>
@@ -932,6 +951,7 @@
 </table></div></div>
 <p>Provision is booked monthly as an expected&#8209;credit&#8209;loss estimate against the aging above; write&#8209;off of a specific balance requires Finance Manager approval up to SAR 25,000 and CFO approval beyond that, and only after collections/legal steps are exhausted and documented.</p>
 </section>
+
 <section class="sop" id="sop14">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;14</div>
@@ -954,6 +974,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop15">
 <div class="part-divider">
 <div class="pnum">V</div>
@@ -969,6 +990,7 @@
 <li>Treasury publishes a daily cash position (bank balances, expected same&#8209;day inflows from PSP settlement, upcoming payment runs) to the CFO every morning.</li>
 </ol></div>
 </section>
+
 <section class="sop" id="sop16">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;16</div>
@@ -990,6 +1012,7 @@
 </table></div></div>
 <div class="keep"><h3 class="sub"><span class="n">16.3</span>Payment gateway (PSP) settlement</h3><p>Card and app&#8209;wallet payments settle from the acquirer/PSP one to two business days after the transaction, net of interchange fees. Treasury reconciles three figures daily: the <strong>POS/app batch total</strong>, the <strong>PSP settlement report</strong>, and the <strong>bank credit received</strong> &#8212; timing differences are tracked in a settlement&#8209;in&#8209;transit account and cleared as bank credits land, not assumed away.</p></div>
 </section>
+
 <section class="sop" id="sop17">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;17</div>
@@ -997,6 +1020,7 @@
 </div><p class="lede">Each branch and plant holds a small imprest float for minor, non&#8209;gas expenses only &#8212; never for making change against sales or refunding deposits.</p></div>
 <p>Float replenishment requires original receipts matched to a signed voucher; Finance performs surprise counts at least quarterly, and any float custodian change triggers an immediate full count and handover sign&#8209;off.</p>
 </section>
+
 <section class="sop" id="sop18">
 <div class="part-divider">
 <div class="pnum">VI</div>
@@ -1017,6 +1041,7 @@
 </table></div>
 <p>Souq Gas app development is capitalised during the application&#8209;development stage (coding, testing, infrastructure build) and expensed during the preliminary/planning and post&#8209;launch maintenance stages &#8212; Finance and the app's engineering lead jointly tag time and cost each sprint against the correct stage before month&#8209;end.</p>
 </section>
+
 <section class="sop" id="sop19">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;19</div>
@@ -1034,6 +1059,7 @@
 </table></div>
 <p>Physical asset verification (plant, vehicles, major IT hardware) is performed annually and tied to the asset register; disposals below net book value of SAR 25,000 are approved by the Finance Manager, above that by the CFO, with proceeds and any gain/loss booked in the same period as physical disposal.</p>
 </section>
+
 <section class="sop" id="sop20">
 <div class="part-divider">
 <div class="pnum">VII</div>
@@ -1058,6 +1084,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop21">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;21</div>
@@ -1065,6 +1092,7 @@
 </div><p class="lede">Souq Gas drivers and branch sales staff earn incentive pay tied to volume and service KPIs &#8212; accrued monthly, not paid on a hunch.</p></div>
 <p>Incentive accrual is calculated from the same app delivery logs used in SOP&#8209;11/16 (on&#8209;time rate, delivered volume, zero cylinder&#8209;shortage shifts); a driver with an open, unresolved cash or cylinder variance from SOP&#8209;16 has that period's incentive held pending resolution, not forfeited outright. Any change to a scheme's formula requires Finance Manager and HR joint sign&#8209;off and 30 days' written notice to affected staff.</p>
 </section>
+
 <section class="sop" id="sop22">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;22</div>
@@ -1079,6 +1107,7 @@
 </tbody></table>
 </div>
 </section>
+
 <section class="sop" id="sop23">
 <div class="part-divider">
 <div class="pnum">VIII</div>
@@ -1095,6 +1124,7 @@
 </ol></div>
 <div class="callout warn"><span class="lbl">Phase 2 is not optional at this scale</span><p>ZATCA's Phase 2 integration waves have progressively lowered the mandatory threshold &#8212; down to taxable turnover above SAR 375,000 by mid&#8209;2026. A distributor selling thousands of cylinders a month is far above any wave threshold in force and must already be fully integrated; this is a live compliance requirement, not a future milestone.</p></div>
 </section>
+
 <section class="sop" id="sop24">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;24</div>
@@ -1106,6 +1136,7 @@
 <li>Any foreign or mixed ownership in the shareholding structure would require splitting the base between Zakat and income tax pro&#8209;rata to ownership &#8212; confirm the current shareholding structure with Legal before assuming a 100% Zakat treatment.</li>
 </ol></div>
 </section>
+
 <section class="sop" id="sop25">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;25</div>
@@ -1113,6 +1144,7 @@
 </div></div>
 <p>Payments to non&#8209;resident vendors &#8212; for example an offshore Souq Gas app development contractor, or foreign technical consultants &#8212; are subject to withholding tax at the applicable statutory rate for the service category, deducted at source and remitted with the monthly withholding tax return. Procurement flags any new vendor with a non&#8209;Saudi bank/registration at onboarding (SOP&#8209;02) so Tax can confirm treatment before the first payment, not after.</p>
 </section>
+
 <section class="sop" id="sop26">
 <div class="part-divider">
 <div class="pnum">IX</div>
@@ -1127,6 +1159,7 @@
 <li>Board approves the annual budget before the new fiscal year; quarterly reforecast updates the remaining&#8209;year view against actuals without discarding the original budget baseline (used for variance commentary).</li>
 </ol></div>
 </section>
+
 <section class="sop" id="sop27">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;27</div>
@@ -1134,6 +1167,7 @@
 </div></div>
 <p>The monthly management pack &#8212; P&amp;L by channel (refill, exchange, B2B, Souq Gas app), balance sheet, cash flow, the KPI scorecard below, and variance commentary on any line moving more than 5% or SAR 100,000 versus budget &#8212; is circulated by FP&amp;A ahead of the monthly close meeting (SOP&#8209;28) and rolled up into the quarterly board pack.</p>
 </section>
+
 <section class="sop" id="kpi">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">KPI</div>
@@ -1153,6 +1187,7 @@
 </tbody>
 </table></div>
 </section>
+
 <section class="sop" id="sop28">
 <div class="part-divider">
 <div class="pnum">X</div>
@@ -1166,46 +1201,50 @@
 <thead><tr><th>#</th><th>Step</th><th>Owner</th><th>Due</th></tr></thead>
 <tbody>
 <tr><td class="num">1</td><td>Cut off deliveries, receipts and all Souq Gas app shifts at 23:59 last day of the month</td><td>Ops + IT</td><td>Day 0</td></tr>
-<tr><td class="num">2</td><td>Bulk gas dip vs. book, and cylinder counts consolidated per SOP&#8209;08</td><td>Plant Manager / Inventory Controller</td><td>Day 1&#8211;2</td></tr>
+<tr><td class="num">2</td><td>Bulk gas dip vs. book, and cylinder counts consolidated per SOP&#8209;08</td><td>Plant Manager / Inventory &amp; Settlement Controller</td><td>Day 1&#8211;2</td></tr>
 <tr><td class="num">3</td><td>AP invoices cut off; accruals booked for received&#8209;not&#8209;invoiced goods/services</td><td>Accounts Payable</td><td>Day 2</td></tr>
 <tr><td class="num">4</td><td>Bank reconciliations and PSP settlement&#8209;in&#8209;transit cleared (SOP&#8209;16.3)</td><td>Treasury</td><td>Day 2</td></tr>
-<tr><td class="num">5</td><td>Payroll, GOSI and EOSB accruals posted (SOP&#8209;20&#8211;22)</td><td>Payroll / Finance</td><td>Day 2</td></tr>
+<tr><td class="num">5</td><td>Payroll, GOSI and EOSB accruals posted (SOP&#8209;20&#8211;22)</td><td>HR (prepares) / Chief Accountant (records)</td><td>Day 2</td></tr>
 <tr><td class="num">6</td><td>Depreciation run for the month; capex additions/disposals reviewed</td><td>Fixed Assets Accountant</td><td>Day 3</td></tr>
-<tr><td class="num">7</td><td>Receivables aging reviewed; ECL provision updated (SOP&#8209;13); deposit dormancy report run (SOP&#8209;14)</td><td>Credit Controller</td><td>Day 3</td></tr>
-<tr><td class="num">8</td><td>VAT reconciled and e&#8209;invoice log matched to ZATCA acknowledgements (SOP&#8209;23); Zakat provision updated (SOP&#8209;24)</td><td>Tax Accountant</td><td>Day 3</td></tr>
+<tr><td class="num">7</td><td>Receivables aging reviewed; ECL provision updated (SOP&#8209;13); deposit dormancy report run (SOP&#8209;14)</td><td>Receivables &amp; Credit Accountant</td><td>Day 3</td></tr>
+<tr><td class="num">8</td><td>VAT reconciled and e&#8209;invoice log matched to ZATCA acknowledgements (SOP&#8209;23); Zakat provision updated (SOP&#8209;24)</td><td>Tax &amp; E-Invoicing Accountant</td><td>Day 3</td></tr>
 <tr><td class="num">9</td><td>Van cash/cylinder variances and other write&#8209;offs approved per thresholds</td><td>Finance Manager</td><td>Day 3</td></tr>
-<tr><td class="num">10</td><td>All sub&#8209;ledgers (inventory, AP, AR, fixed assets, payroll) reconciled to GL control accounts</td><td>Cost/GL Accountant</td><td>Day 4</td></tr>
+<tr><td class="num">10</td><td>All sub&#8209;ledgers (inventory, AP, AR, fixed assets, payroll) reconciled to GL control accounts</td><td>Chief Accountant</td><td>Day 4</td></tr>
 <tr><td class="num">11</td><td>Management pack and KPI scorecard refreshed (SOP&#8209;27)</td><td>FP&amp;A</td><td>Day 4</td></tr>
 <tr><td class="num">12</td><td>Trial balance lock</td><td>Finance Manager</td><td>Day 5</td></tr>
 </tbody>
 </table></div>
 </section>
+
 <section class="sop" id="sop29">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;29</div>
 <div class="sop-head-text"><span class="eyebrow">Close &amp; Control</span><h2>Internal Control Structure &#8212; SoD by Cycle</h2></div>
-</div><p class="lede">Controls are organised on the <span class="pill std">COSO 2013</span> Internal Control &#8212; Integrated Framework's five components, so every control below maps to a structure an external auditor already tests against.</p></div>
+</div><p class="lede">Controls are organised on the <span class="pill std">COSO 2013</span> Internal Control &#8212; Integrated Framework's five components, so every control below maps to a structure an external auditor already tests against.</p>
+<div class="callout"><span class="lbl">Who holds each duty</span><p>The role names in this manual are the charters established in the <strong>Roles, Duties &amp; Responsibilities Manual (BG-FIN-ORG-001)</strong>, which carries the organisation chart, each charter's delegated authority and its segregation boundary. Payroll processing sits with <strong>HR</strong> and systems operation with <strong>IT</strong>; the review, approval, accounting and reconciliation duties over both remain with the Finance charters named below.</p></div></div>
 <div class="keep"><h3 class="sub"><span class="n">29.1</span>Control environment</h3><p>The CFO owns this manual; every Part has a named process owner (stated in its RACI/approval tables); no owner may also be the sole approver of their own transactions. Annual sign&#8209;off of this manual by the CFO and Audit Committee is the formal control&#8209;environment attestation.</p></div>
 <div class="keep"><h3 class="sub"><span class="n">29.2</span>Risk assessment</h3><p>Risk is reassessed at defined trigger points already built into this manual, not on a separate schedule: variance thresholds (SOP&#8209;08, SOP&#8209;16), B2B credit limits and ECL banding (SOP&#8209;13), capex business cases (SOP&#8209;18), and the insurance/claims log (SOP&#8209;30). A consolidated risk register is reviewed at each quarterly board pack (SOP&#8209;27).</p></div>
 <div class="keep"><h3 class="sub"><span class="n">29.3</span>Control activities &#8212; segregation of duties</h3><p>No single role originates, approves and records the same transaction across any cycle.</p></div>
 <div class="scroll"><table class="wide raci">
 <thead><tr><th>Activity</th><th class="center">Originates</th><th class="center">Approves</th><th class="center">Records in GL</th></tr></thead>
 <tbody>
-<tr><td>Vendor master change (SOP&#8209;02)</td><td class="center">Procurement</td><td class="center">Finance Manager (callback&#8209;verified)</td><td class="center">AP</td></tr>
-<tr><td>Purchase order &gt; SAR 50,000 (SOP&#8209;04)</td><td class="center">Requesting dept.</td><td class="center">Finance Manager / CFO</td><td class="center">AP</td></tr>
-<tr><td>Payment release (SOP&#8209;05)</td><td class="center">AP (proposes batch)</td><td class="center">Finance Manager</td><td class="center">Treasury (releases, different person)</td></tr>
-<tr><td>Cylinder scrap (SOP&#8209;07)</td><td class="center">Plant/Filling Supervisor</td><td class="center">Inventory Controller</td><td class="center">GL Accountant</td></tr>
+<tr><td>Vendor master change (SOP&#8209;02)</td><td class="center">Procurement</td><td class="center">Finance Manager (callback&#8209;verified)</td><td class="center">Accounts Payable</td></tr>
+<tr><td>Purchase order &gt; SAR 50,000 (SOP&#8209;04)</td><td class="center">Requesting dept.</td><td class="center">Finance Manager / CFO</td><td class="center">Accounts Payable</td></tr>
+<tr><td>Payment release (SOP&#8209;05)</td><td class="center">Accounts Payable (proposes batch)</td><td class="center">Finance Manager</td><td class="center">Treasury (releases, different person)</td></tr>
+<tr><td>Cylinder scrap (SOP&#8209;07)</td><td class="center">Plant/Filling Supervisor</td><td class="center">Inventory &amp; Settlement Controller</td><td class="center">Chief Accountant</td></tr>
 <tr><td>Refill / exchange sale (SOP&#8209;09&#8211;10)</td><td class="center">Attendant / driver</td><td class="center">System (weigh&#8209;in rules)</td><td class="center">POS auto&#8209;posts</td></tr>
-<tr><td>B2B credit limit (SOP&#8209;13)</td><td class="center">Sales</td><td class="center">Credit Controller / Finance Manager</td><td class="center">AR</td></tr>
-<tr><td>Deposit refund (SOP&#8209;14)</td><td class="center">Branch cashier</td><td class="center">Finance Manager</td><td class="center">GL Accountant</td></tr>
+<tr><td>B2B credit limit (SOP&#8209;13)</td><td class="center">Sales</td><td class="center">Finance Manager</td><td class="center">Receivables &amp; Credit</td></tr>
+<tr><td>Van settlement write-off (SOP&#8209;16)</td><td class="center">Inventory &amp; Settlement Controller (investigates)</td><td class="center">Finance Manager</td><td class="center">Chief Accountant</td></tr>
+<tr><td>Deposit refund (SOP&#8209;14)</td><td class="center">Branch cashier</td><td class="center">Finance Manager</td><td class="center">Chief Accountant</td></tr>
 <tr><td>Capex approval (SOP&#8209;18)</td><td class="center">Asset owner</td><td class="center">CFO / Board</td><td class="center">Fixed Assets Accountant</td></tr>
-<tr><td>Payroll release (SOP&#8209;20)</td><td class="center">HR</td><td class="center">Finance Manager (independent review)</td><td class="center">Payroll</td></tr>
-<tr><td>Zakat/VAT filing (SOP&#8209;23&#8211;24)</td><td class="center">Tax Accountant</td><td class="center">CFO</td><td class="center">Tax Accountant (files)</td></tr>
+<tr><td>Payroll release (SOP&#8209;20)</td><td class="center">HR (prepares)</td><td class="center">Finance Manager (independent review)</td><td class="center">Chief Accountant records; Treasury releases</td></tr>
+<tr><td>Zakat/VAT filing (SOP&#8209;23&#8211;24)</td><td class="center">Tax &amp; E-Invoicing Accountant</td><td class="center">CFO</td><td class="center">Tax &amp; E-Invoicing Accountant (files)</td></tr>
 </tbody>
 </table></div>
 <div class="keep"><h3 class="sub"><span class="n">29.4</span>Information &amp; communication</h3><p>Nana Financials is the single GL of record; the Souq Gas app is the single source of delivery/van truth (SOP&#8209;11, SOP&#8209;16); neither system is overridden by a spreadsheet. The monthly management pack (SOP&#8209;27) is how control&#8209;relevant information reaches the CFO and Board on a fixed cadence, not on an ad&#8209;hoc basis.</p></div>
 <div class="keep"><h3 class="sub"><span class="n">29.5</span>Monitoring activities</h3><p>Ongoing monitoring: daily van reconciliation (SOP&#8209;16), daily cash position (SOP&#8209;15). Periodic monitoring: monthly cylinder counts (SOP&#8209;08), monthly close (SOP&#8209;28), annual full physical count and annual re&#8209;vetting of critical vendors (SOP&#8209;02). Independent monitoring: internal audit testing of this SoD matrix at least annually, with findings reported directly to the Audit Committee, not through the process owner being tested.</p></div>
 </section>
+
 <section class="sop" id="sop30">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">SOP&#8209;30</div>
@@ -1219,6 +1258,7 @@
 </ul></div>
 <p>Policy renewals are tracked on a rolling calendar by Treasury; any claim above SAR 100,000 is reported to the CFO within 24 hours of the incident, and every claim is logged regardless of value to inform annual renewal negotiations.</p>
 </section>
+
 <section class="sop" id="appendix">
 <div class="keep"><div class="sop-head">
 <div class="sop-tag">App.</div>
@@ -1277,17 +1317,20 @@
 </tbody>
 </table></div></div>
 </section>
-<footer class="colophon">
-<span>BG-FIN-SOP-001 &#183; v3.0</span>
-<span>Best Gas &#8212; Finance Standard Operating Procedures Manual</span>
-<span>Prepared for Nana Financials</span>
-</footer>
+
+    <footer class="colophon">
+      <span>BG-FIN-SOP-001 &middot; v3.0</span>
+      <span>Best Gas &mdash; Finance Standard Operating Procedures Manual</span>
+      <span>Prepared for Nana Financials</span>
+    </footer>
+  </div>
 </div>
-</div>
+
 <div class="fabs">
-<button aria-label="Back to top" class="fab" id="toTop" type="button"><i>&#8593;</i></button>
-<button aria-label="Toggle colour theme" class="fab" id="themeBtn" type="button"><i>&#9681;</i></button>
+  <button class="fab" id="toTop" type="button" aria-label="Back to top"><i>&#8593;</i></button>
+  <button class="fab" id="themeBtn" type="button" aria-label="Toggle colour theme"><i>&#9681;</i></button>
 </div>
+
 <script>
 (function(){
   var root=document.documentElement, mqDesktop=window.matchMedia('(min-width:1081px)');
